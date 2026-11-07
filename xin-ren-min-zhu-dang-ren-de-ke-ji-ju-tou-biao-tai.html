@@ -1,0 +1,1228 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>新任民主党人的科技巨头表态</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #f4f4f1;
+        --panel: #ffffff;
+        --panel-2: #ececea;
+        --ink: #191c20;
+        --ink-2: #4c5258;
+        --ink-3: #7c8288;
+        --line: #d9d9d3;
+        --blue: #1d4e9e;
+        --blue-soft: #e3ebf8;
+        --red: #b3352c;
+        --red-soft: #f9e8e5;
+        --amber: #9a6a12;
+        --amber-soft: #f7ecd2;
+        --green: #2e6b46;
+        --green-soft: #e2efe6;
+        --gray-soft: #e9e9e6;
+        --quote-bg: #f7f6f2;
+        --warn-bg: #fdf6e0;
+        --warn-line: #e3cf8a;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #101216;
+          --panel: #1a1d23;
+          --panel-2: #22262e;
+          --ink: #eceae4;
+          --ink-2: #b6bac0;
+          --ink-3: #878d95;
+          --line: #30353e;
+          --blue: #7ba7e8;
+          --blue-soft: #22354f;
+          --red: #e08a82;
+          --red-soft: #472824;
+          --amber: #dcb264;
+          --amber-soft: #413716;
+          --green: #8fc7a4;
+          --green-soft: #223a2c;
+          --gray-soft: #2a2e36;
+          --quote-bg: #14171c;
+          --warn-bg: #38300f;
+          --warn-line: #6b5c22;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Noto Sans SC", -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px 72px; }
+
+      /* ---------- 头部 ---------- */
+      header.top { padding: 40px 0 8px; border-bottom: 3px solid var(--ink); }
+      .kicker { font-size: 13px; font-weight: 700; letter-spacing: .18em; color: var(--blue); }
+      h1 {
+        font-family: "Noto Serif SC", serif;
+        font-weight: 900;
+        font-size: clamp(30px, 6vw, 46px);
+        line-height: 1.2;
+        margin: 10px 0 12px;
+      }
+      .lede { font-size: 16.5px; color: var(--ink-2); max-width: 46em; margin: 0 0 6px; }
+      .lede strong { color: var(--ink); }
+      .scope { font-size: 13px; color: var(--ink-3); margin: 10px 0 18px; }
+      .scope b { color: var(--ink-2); font-weight: 500; }
+
+      .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0 4px; }
+      .stat { background: var(--panel); border: 1px solid var(--line); padding: 14px 16px 12px; }
+      .stat .n { font-family: "Noto Serif SC", serif; font-size: 30px; font-weight: 900; line-height: 1.1; }
+      .stat .n em { font-style: normal; color: var(--red); }
+      .stat .t { font-size: 13px; color: var(--ink-2); margin-top: 4px; }
+
+      /* ---------- 通用区块 ---------- */
+      section { margin-top: 44px; }
+      h2.sec {
+        font-family: "Noto Serif SC", serif;
+        font-size: 24px; font-weight: 900;
+        margin: 0 0 6px;
+        display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+      }
+      h2.sec .en { font-size: 13px; font-family: "Noto Sans SC", sans-serif; font-weight: 700; letter-spacing: .12em; color: var(--ink-3); }
+      .sec-sub { color: var(--ink-2); font-size: 14.5px; margin: 0 0 16px; max-width: 48em; }
+
+      .findings { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .finding { background: var(--panel); border: 1px solid var(--line); padding: 16px 18px; }
+      .finding h3 { margin: 0 0 6px; font-size: 16px; font-weight: 900; }
+      .finding h3 .tag { font-size: 11px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 2px 7px; border-radius: 99px; margin-left: 6px; vertical-align: 2px; white-space: nowrap; }
+      .finding p { margin: 0; font-size: 14px; color: var(--ink-2); }
+      .finding p b { color: var(--ink); }
+
+      /* ---------- 暂停之争 ---------- */
+      .stance-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+      .stance-col { border: 1px solid var(--line); background: var(--panel); padding: 16px 18px; }
+      .stance-col h3 { margin: 0 0 4px; font-size: 16px; font-weight: 900; display: flex; justify-content: space-between; align-items: baseline; }
+      .stance-col h3 .cnt { font-family: "Noto Serif SC", serif; font-size: 22px; }
+      .stance-col .desc { font-size: 12.5px; color: var(--ink-3); margin: 0 0 10px; }
+      .stance-col ul { margin: 0; padding: 0; list-style: none; font-size: 14px; }
+      .stance-col li { padding: 3px 0; border-top: 1px dashed var(--line); }
+      .stance-col li:first-child { border-top: none; }
+      .stance-col li a { color: var(--ink); text-decoration: none; }
+      .stance-col li a:hover { color: var(--blue); text-decoration: underline; }
+      .stance-col li .st { color: var(--ink-3); font-size: 12.5px; }
+      .col-pause { border-top: 4px solid var(--red); }
+      .col-cond { border-top: 4px solid var(--amber); }
+      .col-reg { border-top: 4px solid var(--green); }
+      .stance-note { font-size: 13px; color: var(--ink-3); margin-top: 10px; }
+
+      /* ---------- 筛选 ---------- */
+      .filters {
+        position: sticky; top: 0; z-index: 20;
+        background: var(--bg);
+        padding: 14px 0 10px;
+        border-bottom: 1px solid var(--line);
+      }
+      .frow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 8px; }
+      .frow:last-child { margin-bottom: 0; }
+      .flabel { font-size: 12px; font-weight: 700; color: var(--ink-3); letter-spacing: .08em; margin-right: 2px; white-space: nowrap; }
+      .chip {
+        font: inherit; font-size: 13px; font-weight: 500;
+        border: 1px solid var(--line); background: var(--panel); color: var(--ink-2);
+        padding: 4px 12px; border-radius: 99px; cursor: pointer;
+      }
+      .chip:hover { border-color: var(--ink-3); }
+      .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 700; }
+      .search {
+        font: inherit; font-size: 14px;
+        border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+        padding: 6px 12px; border-radius: 99px; min-width: 200px; flex: 0 1 280px;
+      }
+      .search:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+      .fcount { font-size: 13px; color: var(--ink-3); margin-left: auto; white-space: nowrap; }
+
+      /* ---------- 人物卡 ---------- */
+      .group-head { display: flex; align-items: baseline; gap: 12px; margin: 40px 0 4px; border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+      .group-head h2 { font-family: "Noto Serif SC", serif; font-size: 24px; font-weight: 900; margin: 0; }
+      .group-head .gcount { font-size: 13px; color: var(--ink-3); }
+      .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+      .card { background: var(--panel); border: 1px solid var(--line); padding: 20px 22px; display: flex; flex-direction: column; }
+      .card.wide { grid-column: 1 / -1; }
+      .card-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+      .pname { font-family: "Noto Serif SC", serif; font-size: 21px; font-weight: 900; line-height: 1.25; margin: 0; }
+      .pname .cn { font-size: 15px; font-weight: 700; color: var(--ink-2); margin-left: 6px; white-space: nowrap; }
+      .prole { font-size: 13px; color: var(--ink-3); margin-top: 2px; }
+      .badges { display: flex; flex-direction: column; gap: 5px; align-items: flex-end; flex-shrink: 0; }
+      .badge { font-size: 11.5px; font-weight: 700; padding: 2px 9px; border-radius: 99px; white-space: nowrap; }
+      .b-pause { background: var(--red-soft); color: var(--red); }
+      .b-cond { background: var(--amber-soft); color: var(--amber); }
+      .b-reg { background: var(--green-soft); color: var(--green); }
+      .b-na { background: var(--gray-soft); color: var(--ink-2); }
+      .b-none { background: var(--gray-soft); color: var(--ink-3); }
+      .b-level { background: var(--blue-soft); color: var(--blue); }
+      .themes { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0 2px; }
+      .theme { font-size: 11.5px; color: var(--ink-2); border: 1px solid var(--line); padding: 1px 8px; border-radius: 99px; }
+      .stmts { margin: 8px 0 0; padding: 0; list-style: none; }
+      .stmts > li { font-size: 14.5px; padding: 9px 0; border-top: 1px dashed var(--line); }
+      .stmts > li:first-child { border-top: none; }
+      .when { font-size: 11px; font-weight: 700; padding: 1px 7px; border-radius: 3px; margin-right: 6px; vertical-align: 1px; white-space: nowrap; }
+      .w-camp { background: var(--blue-soft); color: var(--blue); }
+      .w-post { background: var(--red-soft); color: var(--red); }
+      .w-rec { background: var(--gray-soft); color: var(--ink-2); }
+      blockquote {
+        margin: 8px 0 4px; padding: 10px 14px;
+        background: var(--quote-bg); border-left: 3px solid var(--blue);
+        font-size: 14px; line-height: 1.6; color: var(--ink);
+      }
+      blockquote .tr { display: block; color: var(--ink-2); font-size: 13.5px; margin-top: 4px; }
+      .src { font-size: 12.5px; color: var(--ink-3); margin-top: 5px; }
+      .src a { color: var(--blue); text-decoration: none; word-break: break-all; }
+      .src a:hover { text-decoration: underline; }
+      .caveat {
+        margin-top: 12px; font-size: 13px; color: var(--ink-2);
+        background: var(--warn-bg); border: 1px solid var(--warn-line); padding: 10px 13px;
+      }
+      .caveat b { color: var(--ink); }
+      .caveat .clabel { font-weight: 900; font-size: 11.5px; letter-spacing: .06em; color: var(--amber); display: block; margin-bottom: 2px; }
+      .card.none-card { background: var(--panel-2); border-style: dashed; }
+      .empty { display: none; text-align: center; color: var(--ink-3); padding: 36px 0 8px; font-size: 15px; }
+      .empty.show { display: block; }
+
+      /* ---------- 马斯克对比章节 ---------- */
+      .verdict { background: var(--panel); border: 1px solid var(--line); border-top: 4px solid var(--red); padding: 18px 22px; }
+      .verdict h3 { margin: 0 0 8px; font-family: "Noto Serif SC", serif; font-size: 19px; font-weight: 900; }
+      .verdict p { margin: 0 0 8px; font-size: 14.5px; color: var(--ink-2); }
+      .verdict p:last-child { margin-bottom: 0; }
+      .verdict p b { color: var(--ink); }
+      .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+      .cmp-col { border: 1px solid var(--line); background: var(--panel); padding: 16px 18px; }
+      .cmp-col h3 { margin: 0 0 8px; font-size: 15.5px; font-weight: 900; }
+      .cmp-col.for { border-top: 4px solid var(--red); }
+      .cmp-col.against { border-top: 4px solid var(--green); }
+      .cmp-col ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--ink-2); }
+      .cmp-col li { padding: 3px 0; }
+      .cmp-col li b { color: var(--ink); }
+      .dim-table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); font-size: 14px; }
+      .dim-table th, .dim-table td { text-align: left; vertical-align: top; padding: 10px 14px; border-top: 1px solid var(--line); }
+      .dim-table thead th { border-top: none; background: var(--panel-2); font-size: 13px; }
+      .dim-table th.dim { white-space: nowrap; font-weight: 700; width: 110px; }
+      .dim-table td { color: var(--ink-2); }
+      .dim-table td b { color: var(--ink); }
+      .mtag { font-size: 11.5px; font-weight: 700; padding: 2px 9px; border-radius: 99px; white-space: nowrap; }
+      .t-person { background: var(--red-soft); color: var(--red); }
+      .t-prod { background: var(--blue-soft); color: var(--blue); }
+      .t-both { background: var(--amber-soft); color: var(--amber); }
+      .t-none { background: var(--gray-soft); color: var(--ink-3); }
+      .t-pass { background: var(--gray-soft); color: var(--ink-2); }
+      .mgroup { font-family: "Noto Serif SC", serif; font-size: 18px; font-weight: 900; margin: 26px 0 4px; border-bottom: 2px solid var(--ink); padding-bottom: 5px; }
+      .mgroup:first-of-type { margin-top: 6px; }
+      .mcards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+      .mcard { background: var(--panel); border: 1px solid var(--line); padding: 15px 18px; font-size: 14px; }
+      .mcard.none { background: var(--panel-2); border-style: dashed; }
+      .mcard .mhead { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; margin-bottom: 6px; }
+      .mcard .mname { font-weight: 900; font-size: 15.5px; }
+      .mcard .mname .mrole { font-weight: 500; font-size: 12.5px; color: var(--ink-3); margin-left: 5px; }
+      .mcard p { margin: 0 0 6px; color: var(--ink-2); }
+      .mcard p b { color: var(--ink); }
+      .mcard blockquote { margin: 6px 0; font-size: 13.5px; }
+      .probe-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+      .probe { background: var(--panel); border: 1px solid var(--line); padding: 16px 20px; }
+      .probe h3 { margin: 0 0 8px; font-size: 16px; font-weight: 900; }
+      .probe p, .probe li { font-size: 14.5px; color: var(--ink-2); }
+      .probe p b, .probe li b { color: var(--ink); }
+      .probe ul { margin: 6px 0; padding-left: 20px; }
+      .probe li { padding: 2px 0; }
+
+      /* ---------- 未能核实 ---------- */
+      .unverified { background: var(--panel); border: 1px solid var(--line); padding: 6px 22px; }
+      .unverified li { font-size: 14.5px; padding: 10px 0; border-top: 1px dashed var(--line); }
+      .unverified li:first-child { border-top: none; }
+      .unverified ul { margin: 0; padding-left: 20px; }
+
+      footer { margin-top: 52px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 13px; color: var(--ink-3); }
+      footer p { margin: 0 0 8px; max-width: 52em; }
+
+      @media (max-width: 760px) {
+        .stats { grid-template-columns: repeat(2, 1fr); }
+        .findings, .stance-board, .cards, .cmp, .mcards { grid-template-columns: 1fr; }
+        .dim-table th.dim { white-space: normal; width: auto; }
+        .dim-table, .dim-table thead, .dim-table tbody, .dim-table tr, .dim-table th, .dim-table td { display: block; }
+        .dim-table thead { display: none; }
+        .dim-table td { border-top: none; padding-top: 2px; }
+        .dim-table th.dim { border-top: 1px solid var(--line); padding-bottom: 2px; }
+        .card.wide { grid-column: auto; }
+        header.top { padding-top: 26px; }
+        .filters { position: static; }
+        .fcount { margin-left: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+
+      <header class="top">
+        <div class="kicker">2026 美国中期选举 · 新科当选者言论档案</div>
+        <h1>新任民主党人怎么谈科技巨头</h1>
+        <p class="lede">2026 年 11 月 3 日中期选举中新当选的民主党参议员、众议员与州长，对美国科技巨头的公开评论与发言——<strong>主战场不是反垄断，而是数据中心</strong>：电费、水、税收优惠和谁说了算。具名点到最多的是 Google、Amazon、Meta，其次是 Microsoft、OpenAI、Oracle、Anthropic；针对 Apple、Nvidia 的表态几乎没有。</p>
+        <p class="scope"><b>范围：</b>名单内 32 人（参议员 8、州长 13、众议员 11），2027 年 1 月就职。主体部分收录他们对马斯克<b>以外</b>科技巨头的表态；文末新增「与涉马斯克表态的对比」章节，逐人列出涉马斯克表态并回答「是否专门针对马斯克」。不含现任党内领袖的发言（调查计划部分涉及的候任委员会主席除外）。<b>检索截止：</b>2026 年 11 月 7 日。引文保留英文原文并附中文大意，「竞选期间」指 11 月 3 日投票日前，「选后」指投票日后。</p>
+        <div class="stats">
+          <div class="stat"><div class="n">32</div><div class="t">名单内新当选者总数</div></div>
+          <div class="stat"><div class="n">31</div><div class="t">至少有一句可查的涉科技巨头表态</div></div>
+          <div class="stat"><div class="n"><em>12</em></div><div class="t">主张暂停或有条件暂停新建数据中心</div></div>
+          <div class="stat"><div class="n">1</div><div class="t">未找到任何相关表态（Mike McGuire）</div></div>
+        </div>
+      </header>
+
+      <section aria-label="核心发现">
+        <h2 class="sec">先看结论 <span class="en">KEY FINDINGS</span></h2>
+        <div class="findings">
+          <div class="finding">
+            <h3>主题只有一个：数据中心<span class="tag">电费 · 水 · 税惠 · 保密协议</span></h3>
+            <p>几乎所有人的表态都收敛到同一组诉求：数据中心<b>自付电网升级费用、不得把成本转嫁给居民电费、不得耗尽水资源、取消税收优惠、项目由地方社区决定、禁止保密协议（NDA）</b>。传统议题——应用商店、隐私立法细节、针对 Apple / Nvidia 的反垄断——几乎无人谈及。</p>
+          </div>
+          <div class="finding">
+            <h3>最具体的是两位前总检察长<span class="tag">具名公司 · 诉讼纪录</span></h3>
+            <p><b>Xavier Becerra</b>（加州州长）在 9 月 30 日辩论中以「我起诉过 Meta、Amazon、Google」回应「受大科技资助」的质疑；<b>Phil Weiser</b>（科罗拉多州长）任州总检察长时共同主导与 Meta 达成的 <b>171 亿美元</b>和解，科罗拉多州获 6.15 亿美元。众议员中只有 <b>Shannon Taylor</b> 明确主张拆分科技等行业的非法垄断。</p>
+          </div>
+          <div class="finding">
+            <h3>AI 安全上最强硬的是 Flanagan<span class="tag">生存威胁 · 暂停开发</span></h3>
+            <p>明尼苏达参议员 <b>Peggy Flanagan</b> 称失控的 AI 是「对人类的生存威胁」，其团队称在国会建立独立安全测试与责任规则之前，应「认真考虑暂停进一步的高级 AI 开发」。堪萨斯参议员 <b>Adam Hamilton</b> 称 AI 像「巴别塔」，主张政府帮着「放慢」——但他本人持有逾 700 万美元 Apple 股票及数百万科技股，是全场最大的言行对照。</p>
+          </div>
+          <div class="finding">
+            <h3>选后已有人把话落到行政令<span class="tag">选后表态 · 仅 2 人</span></h3>
+            <p>绝大多数引文来自竞选期间。选后明确表态的只有两位州长：得州 <b>Gina Hinojosa</b> 11 月 5 日对 CNN 说「在保护规则出台前，数据中心要停下来」；佐治亚 <b>Keisha Lance Bottoms</b> 11 月 4 日称将立即签署行政令实施全州暂停，并审查数据中心税收优惠。</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="数据中心暂停之争">
+        <h2 class="sec">数据中心：暂停，还是管制 <span class="en">THE MORATORIUM SPLIT</span></h2>
+        <p class="sec-sub">这是这批新当选者之间最清晰的一条分界线。点名字可跳到本人条目。</p>
+        <div class="stance-board">
+          <div class="stance-col col-pause">
+            <h3>主张暂停 <span class="cnt">11</span></h3>
+            <p class="desc">先停下新建项目，等规则或审查跟上</p>
+            <ul>
+              <li><a href="#p-jackson">Troy Jackson</a> <span class="st">参议员 · 缅因</span></li>
+              <li><a href="#p-andrews">Annie Andrews</a> <span class="st">参议员 · 南卡（全州两年）</span></li>
+              <li><a href="#p-hinojosa">Gina Hinojosa</a> <span class="st">州长 · 得州</span></li>
+              <li><a href="#p-bottoms">Keisha Lance Bottoms</a> <span class="st">州长 · 佐治亚（行政令）</span></li>
+              <li><a href="#p-haaland">Deb Haaland</a> <span class="st">州长 · 新墨西哥（首日行政令）</span></li>
+              <li><a href="#p-kreiss">Jonathan Kreiss-Tomkins</a> <span class="st">州长 · 阿拉斯加</span></li>
+              <li><a href="#p-benson">Jocelyn Benson</a> <span class="st">州长 · 密歇根</span></li>
+              <li><a href="#p-pingree">Hannah Pingree</a> <span class="st">州长 · 缅因</span></li>
+              <li><a href="#p-crowley">David Crowley</a> <span class="st">州长 · 威斯康星（审查期暂停）</span></li>
+              <li><a href="#p-harvie">Bob Harvie</a> <span class="st">众议员 · 宾州</span></li>
+              <li><a href="#p-shah">Amish Shah</a> <span class="st">众议员 · 亚利桑那（本选区）</span></li>
+            </ul>
+          </div>
+          <div class="stance-col col-cond">
+            <h3>有条件暂停 <span class="cnt">1</span></h3>
+            <p class="desc">满足一整套条件才可以推进</p>
+            <ul>
+              <li><a href="#p-acton">Amy Acton</a> <span class="st">州长 · 俄亥俄：须 100% 自担公用事业成本、自建电力、工会劳工、环保达标、无保密协议、社区受益、优先用棕地</span></li>
+            </ul>
+            <h3 style="margin-top:18px;">管制而非禁止 <span class="cnt" style="font-size:22px;">6</span></h3>
+            <p class="desc">明确反对或未主张全面暂停，主张立规矩</p>
+            <ul>
+              <li><a href="#p-talarico">James Talarico</a> <span class="st">参议员 · 得州</span></li>
+              <li><a href="#p-turek">Josh Turek</a> <span class="st">参议员 · 艾奥瓦</span></li>
+              <li><a href="#p-brown">Sherrod Brown</a> <span class="st">参议员 · 俄亥俄</span></li>
+              <li><a href="#p-hamilton">Adam Hamilton</a> <span class="st">参议员 · 堪萨斯（主张地方决定）</span></li>
+              <li><a href="#p-flanagan">Peggy Flanagan</a> <span class="st">参议员 · 明尼苏达（不支持禁令）</span></li>
+              <li><a href="#p-klobuchar">Amy Klobuchar</a> <span class="st">州长 · 明尼苏达（未支持暂停）</span></li>
+            </ul>
+          </div>
+          <div class="stance-col col-reg" style="border-top-color: var(--ink-3);">
+            <h3>未明确提暂停 <span class="cnt">13</span></h3>
+            <p class="desc">只谈成本、税惠、地方决定或具名公司，未碰暂停问题</p>
+            <ul>
+              <li><a href="#p-cooper">Roy Cooper</a> <span class="st">参议员 · 北卡</span></li>
+              <li><a href="#p-sand">Rob Sand</a> <span class="st">州长 · 艾奥瓦</span></li>
+              <li><a href="#p-aford">Aaron Ford</a> <span class="st">州长 · 内华达（暂停的是新税收减免）</span></li>
+              <li><a href="#p-becerra">Xavier Becerra</a> <span class="st">州长 · 加州</span></li>
+              <li><a href="#p-weiser">Phil Weiser</a> <span class="st">州长 · 科罗拉多</span></li>
+              <li><a href="#p-jdford">J.D. Ford</a> <span class="st">众议员 · 印第安纳</span></li>
+              <li><a href="#p-taylor">Shannon Taylor</a> <span class="st">众议员 · 弗吉尼亚</span></li>
+              <li><a href="#p-luria">Elaine Luria</a> <span class="st">众议员 · 弗吉尼亚</span></li>
+              <li><a href="#p-bohannan">Christina Bohannan</a> <span class="st">众议员 · 艾奥瓦</span></li>
+              <li><a href="#p-james">Lindsay James</a> <span class="st">众议员 · 艾奥瓦</span></li>
+              <li><a href="#p-garriott">Sarah Trone Garriott</a> <span class="st">众议员 · 艾奥瓦</span></li>
+              <li><a href="#p-pulido">Bobby Pulido</a> <span class="st">众议员 · 得州</span></li>
+              <li><a href="#p-ojeda">Richard Ojeda</a> <span class="st">众议员 · 北卡</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="stance-note">另有 Mike McGuire（众议员 · 加州）未找到任何相关表态，不计入上表。立场归类依据各人公开表态原文；未提及暂停不等于支持建设。</p>
+      </section>
+
+      <section aria-label="逐人档案">
+        <h2 class="sec">逐人档案 <span class="en">PERSON BY PERSON</span></h2>
+        <p class="sec-sub">按参议院、州长、众议员分组；每人最强、最具体的表态排在前面。「言行对照」框里是财务披露、捐款或过往纪录等背景事实，不是本人表态，单独标出。</p>
+
+        <div class="filters" role="group" aria-label="筛选">
+          <div class="frow" id="f-chamber">
+            <span class="flabel">身份</span>
+            <button class="chip" data-v="all" aria-pressed="true">全部</button>
+            <button class="chip" data-v="senate" aria-pressed="false">参议员</button>
+            <button class="chip" data-v="gov" aria-pressed="false">州长</button>
+            <button class="chip" data-v="house" aria-pressed="false">众议员</button>
+          </div>
+          <div class="frow" id="f-stance">
+            <span class="flabel">暂停立场</span>
+            <button class="chip" data-v="all" aria-pressed="true">全部</button>
+            <button class="chip" data-v="pause" aria-pressed="false">主张暂停</button>
+            <button class="chip" data-v="cond" aria-pressed="false">有条件暂停</button>
+            <button class="chip" data-v="reg" aria-pressed="false">管制而非暂停</button>
+            <button class="chip" data-v="na" aria-pressed="false">未明确</button>
+            <button class="chip" data-v="none" aria-pressed="false">无表态</button>
+          </div>
+          <div class="frow" id="f-theme">
+            <span class="flabel">议题</span>
+            <button class="chip" data-v="all" aria-pressed="true">全部</button>
+            <button class="chip" data-v="dc" aria-pressed="false">数据中心</button>
+            <button class="chip" data-v="ai" aria-pressed="false">AI 安全与监管</button>
+            <button class="chip" data-v="anti" aria-pressed="false">反垄断与诉讼</button>
+            <button class="chip" data-v="kids" aria-pressed="false">儿童与社交媒体</button>
+            <button class="chip" data-v="app" aria-pressed="false">应用商店</button>
+            <button class="chip" data-v="contrast" aria-pressed="false">言行对照</button>
+          </div>
+          <div class="frow">
+            <span class="flabel">搜索</span>
+            <input class="search" id="f-q" type="search" placeholder="人名 / 公司名，如 Meta、Google…" aria-label="按人名或公司名搜索" />
+            <span class="fcount" id="f-count"></span>
+          </div>
+        </div>
+
+        <div id="groups"></div>
+        <p class="empty" id="empty">没有符合当前筛选的人。换一组条件试试。</p>
+      </section>
+
+      <section aria-label="与涉马斯克表态的对比">
+        <h2 class="sec">与涉马斯克表态的对比 <span class="en">MUSK VS. THE REST</span></h2>
+        <p class="sec-sub">同一批 32 人对马斯克（Elon Musk）及其公司（Tesla、SpaceX、X、xAI、Grok、Starlink）的本人公开表态，与上文非马斯克表态逐一对照。只统计<b>本人说过</b>的；马斯克花钱反对某人、或他人议论某人，不算该人表态。</p>
+
+        <div class="verdict">
+          <h3>结论：是「第一目标」，不是「唯一目标」</h3>
+          <p>涉马斯克表态<b>明显更尖锐、更个人化、更频繁</b>：32 人中 <b>26 人</b>有本人直接涉马斯克表态，参议员 8 人全员都有；语言是「买下参议院席位」「拿电锯砍社保医保」「应负刑责」「merry band of scumbags（人渣团伙）」这一级，而非马斯克表态大多只是一句不点名的数据中心政策。</p>
+          <p>但压倒性多数攻击的是<b>马斯克本人的政治角色——本轮最大共和党金主、DOGE 负责人</b>，不是 Tesla、SpaceX 的产品或经营。真正点名具体产品的只有 3 人（Klobuchar、Flanagan、Benson，均聚焦 Grok），另有 Luria、Ojeda 谈到 Starlink。背景是竞选现实：马斯克本周期花钱各源统计 <b>3.66 亿至 4.74 亿美元</b>（口径不一，见文末），直接花钱反对其中多人，「反马斯克」是现成的竞选叙事，而非一套针对其公司的产业政策。</p>
+          <p>更准确的描述是：<b>以反腐败、反金钱政治为框架的广泛科技与企业批评，其中马斯克因其政治角色（最大金主＋DOGE 负责人＋Grok 所有者）成为最突出、最尖锐的单一靶子</b>。他被针对的原因首先是政治性的（花钱与掌权），其次才是产品性的（Grok）。</p>
+        </div>
+
+        <div class="cmp">
+          <div class="cmp-col for">
+            <h3>支持「专门针对马斯克」的证据</h3>
+            <ul>
+              <li><b>26 人点名马斯克</b>，语言强度远超其非马斯克表态；参议员 8/8 全员有涉马斯克言论。</li>
+              <li>马斯克是 2026 年竞选资金叙事的中心人物：他直接花钱反对其中至少 10 人（Talarico、Turek、Bohannan、James、Trone Garriott、Pulido、Luria、Shah、Brown、Jackson 等），成为最方便、最具动员力的靶子。</li>
+              <li>11 月 6 日调查计划中，马斯克是<b>唯一被点名的个人</b>，独占 Grok 与 DOGE／合同两条调查线；Groundwork 档案亦称其为「主要目标之一」。</li>
+            </ul>
+          </div>
+          <div class="cmp-col against">
+            <h3>反对「专门针对」、指向更广泛姿态的证据</h3>
+            <ul>
+              <li>32 人的非马斯克表态真实存在且构成<b>平行主线</b>（数据中心成本）；Becerra、Weiser 的非马斯克法律纪录（起诉、和解 Meta／Amazon／Google）甚至强于其涉马斯克纪录。</li>
+              <li>绝大多数涉马斯克言论的实质是「亿万富翁买选举／DOGE 裁员／税收不公」，<b>把名字换成 Bezos 或 Zuckerberg 也成立</b>；只有 3 人真正针对具体产品 Grok。</li>
+              <li>调查计划名单远不止马斯克：Apple、Meta 与其并列；舞厅捐款线点名 6 家以上公司且<b>未点名马斯克</b>；档案名单还包括 Amazon、Oracle、Palantir、Anthropic、Ticketmaster 等。候任众议院司法委员会主席 Raskin 明确否认「针对特定公司」。</li>
+              <li><b>4 人完全没有涉马斯克言论</b>（Kreiss-Tomkins、Pingree、Pulido、J.D. Ford），Becerra 在 2026 年也没有——若是全党统一的「专门针对马斯克」运动，很难解释这些空白。</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 style="font-family:'Noto Serif SC',serif;font-size:18px;font-weight:900;margin:28px 0 10px;">五个维度对照</h3>
+        <table class="dim-table">
+          <thead><tr><th>维度</th><th>涉马斯克表态</th><th>非马斯克 Big Tech 表态</th></tr></thead>
+          <tbody>
+            <tr><th class="dim">有表态人数</th><td><b>26 人</b>直接有；另 Weiser 仅被动涉案、Becerra 仅 2020 年旧表态；4 人无</td><td>31 人有（仅 McGuire 无），但多为一句通用数据中心话</td></tr>
+            <tr><th class="dim">点名程度</th><td>绝大多数<b>点名「Musk」本人</b>；仅 3 人点名具体产品（Grok）</td><td>极少点名公司；主要是 Becerra（Meta／Amazon／Google）、Weiser（Meta 和解）</td></tr>
+            <tr><th class="dim">攻击对象</th><td>政治金主（买选举）＞ DOGE 负责人 ＞ 税收／社保公平象征 ＞ 具体产品（Grok／Starlink，少数）</td><td>数据中心成本（电费／水／减税／地方决定权）；极少谈反垄断、隐私、应用商店</td></tr>
+            <tr><th class="dim">语气</th><td>个人化、道德化：「买下席位」「电锯」「人渣」「应负刑责」「史上最大减税」</td><td>政策化、通用：「须自付成本」「不得推高居民电费」</td></tr>
+            <tr><th class="dim">频率／可见度</th><td>参议员 8/8、艾奥瓦 3 名众议员 3/3 均有；是竞选广告与筹款邮件的高频词</td><td>多为竞选网站一两句，未成为广告主线</td></tr>
+          </tbody>
+        </table>
+        <p class="stance-note">两个反向例外：Becerra 与 Weiser 的非马斯克科技纪录比其涉马斯克纪录更具体、更有法律分量；McGuire 则相反——他唯一可找到的科技相关言论就是一句关于马斯克的税收批评。不能用「32 人整体」一概而论，须按人区分（见下）。</p>
+
+        <h3 style="font-family:'Noto Serif SC',serif;font-size:18px;font-weight:900;margin:28px 0 4px;">逐人：涉马斯克表态</h3>
+        <p class="sec-sub" style="margin-bottom:4px;">标签说明：<span class="mtag t-person">马斯克本人 · 政治角色</span> 指攻击其金主／DOGE 负责人身份；<span class="mtag t-prod">具体公司 / 产品</span> 指针对 Grok、Starlink 等产品或经营；<span class="mtag t-both">两者皆有</span>；<span class="mtag t-pass">被动 / 间接 / 旧表态</span>；<span class="mtag t-none">无表态</span>。</p>
+
+        <h4 class="mgroup">参议员</h4>
+        <div class="mcards">
+          <div class="mcard">
+            <div class="mhead"><span class="mname">James Talarico<span class="mrole">参议员 · 得州</span></span><span class="mtag t-both">两者皆有</span></div>
+            <p>全组最强之一。2026 年 10 月集会（Denton／San Antonio）反复称马斯克在「买得州、买这个参议员席位」；选前 NBC 采访中又称自己曾是马斯克的粉丝、是 SpaceX 与 Tesla 的拥护者，划线只在「用财富影响政治」。另在播客中称 Tesla 的成功靠纳税人资金。马斯克确实直接花钱反对他（报道称约 2 亿美元支持其对手 Paxton）。<b>胜选后语气明显缓和</b>：11 月 4 日对 CNN 说「我愿意与任何人合作」。</p>
+            <blockquote>“Elon Musk is trying to buy this Senate seat in Texas.”<span class="tr">马斯克正试图买下得州的这个参议员席位。（2026 年 10 月集会）</span></blockquote>
+            <blockquote>“I'm a big fan of SpaceX, of Tesla… I don't like that he's trying to buy the Senate seat in Texas; I don't like that he's using his wealth to influence our political system. That's where I draw the line.”<span class="tr">我是 SpaceX、Tesla 的铁杆支持者……我不喜欢的是他试图买下得州的参议员席位、用财富影响我们的政治制度。我的界线划在这里。（选前 NBC 采访）</span></blockquote>
+            <div class="src">来源：<a href="https://www.usatoday.com/story/opinion/columnist/2026/10/23/talarico-campaign-donations-hollywood-musk-funding-paxton/92330213007/" target="_blank" rel="noopener noreferrer">USA Today 专栏，2026-10-23</a>；<a href="https://mazech.com/2026/11/james-talarico-says-hell-work-with-anyone-in-texas-including-elon-musk/" target="_blank" rel="noopener noreferrer">Mazech（NBC 采访），2026-11-05</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Roy Cooper<span class="mrole">参议员 · 北卡</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>有，但较弱、较早。2024 年 8 月任州长时曾警告 X 平台虚假信息泛滥、构成「危险风险」（<b>原始出处未能核实</b>，见文末）。2026 年 10 月 14 日 Greensboro 竞选活动谈 AI 时，把包括「SpaceX AI 的 Elon Musk」在内的 CEO 与特朗普签的自愿协议列为反面例子，主张设独立护栏——是把马斯克列为行业代表之一，并非单独点名攻击。2026 年未见他针对马斯克金钱或 DOGE 的激烈言论。</p>
+            <blockquote>“我们需要让独立、有知识的人聚在一起，设置护栏来保护人民。”<span class="tr">（2026-10-14，谈 AI 自我监管协议；经报道转述）</span></blockquote>
+            <div class="src">来源：<a href="https://cardinalpine.com/news/elections/roy-cooper-ai-war-healthcare-greensboro/" target="_blank" rel="noopener noreferrer">Cardinal &amp; Pine，2026-10</a>；<a href="https://www.livarava.com/technology/p/5254516" target="_blank" rel="noopener noreferrer">Livarava 二级转载，2024-08-20（原始出处未确认）</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Troy Jackson<span class="mrole">参议员 · 缅因</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>语言最粗粝之一，几乎全部科技批评都通过「马斯克买选举」框架表达。2026 年 10 月 6 日辩论称缅因人失去医保，是为了让「马斯克和亿万富翁们拿到更多钱」；回应 America PAC 计划花 1 亿至 1.2 亿美元助选共和党时称「缅因不想要你的脏钱」。</p>
+            <blockquote>“We can outwork Elon Musk's 'merry band of scumbags'.”<span class="tr">我们能拼过马斯克那帮「欢乐的人渣团伙」。（2026-11-02 竞选演讲）</span></blockquote>
+            <blockquote>“You don't get to buy the government that you want.”<span class="tr">你不能买下你想要的政府。</span></blockquote>
+            <div class="src">来源：<a href="https://www.facebook.com/reel/39861086530202907/" target="_blank" rel="noopener noreferrer">竞选演讲视频，2026-11-02</a>；<a href="https://semblen.com/races/me-senate/debates/2026-10-06" target="_blank" rel="noopener noreferrer">Semblen 辩论记录，2026-10-06</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Sherrod Brown<span class="mrole">参议员 · 俄亥俄</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>中等强度：把马斯克与 Bezos、Zuckerberg <b>并列</b>，不单独针对其公司。2026 年 10 月 27 日社交媒体图文以马斯克（戴 DOGE 帽）、Bezos、Zuckerberg、特朗普四人像为背景；选举日最终广告旁白称「被贪婪与腐败吞噬的亿万富翁拿了又拿」，画面包括马斯克与 Zuckerberg 等高管。另有视频引述他指控特朗普与马斯克向对手 Husted「注入数十亿」——<b>原话未能独立核对</b>（见文末）。</p>
+            <blockquote>“If you're a billionaire looking for more tax breaks, I promise I'm not your guy.”<span class="tr">如果你是想再要减税的亿万富翁，我保证我不是你的人。（2026-10-27，配文「工人先于亿万富翁」）</span></blockquote>
+            <div class="src">来源：<a href="https://www.facebook.com/sherrod/posts/pfbid02GRJozNB7YjZbUc7iVsf3Q4tRVtCN4VKNaymv8t36m6Mb2cUHVD8N231A8wBp1yjbl" target="_blank" rel="noopener noreferrer">Facebook 帖文，2026-10-27</a>；<a href="https://www.europesays.com/3351097/" target="_blank" rel="noopener noreferrer">Europe Says 转载，2026-11-04</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Annie Andrews<span class="mrole">参议员 · 南卡</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>攻击 DOGE「电锯」。2025 年 5 月竞选启动视频批评对手 Graham 与马斯克的关系，称一个未经选举的亿万富翁正拿电锯砍向社保、医保与退伍军人医疗。这是一次性的启动视频台词；其数据中心批评同样存在，两者强度大体相当。</p>
+            <blockquote>“an unelected billionaire … taking a chainsaw to Social Security, Medicare and veterans' healthcare.”<span class="tr">一个未经选举的亿万富翁……拿着电锯砍向社会保障、医疗保险与退伍军人医疗。（2025 年 5 月启动视频）</span></blockquote>
+            <div class="src">来源：<a href="https://kvnutalk.com/sen-lindsey-graham-gets-a-2026-challenge-from-democrat-annie-andrews/" target="_blank" rel="noopener noreferrer">KVNU 转载美联社，2025-05</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Adam Hamilton<span class="mrole">参议员 · 堪萨斯</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>温和但明确。2026 年 7 月接受 United Methodist News 采访时说，马斯克「拿着电锯象征削减联邦预算」的形象尤其令他反感；他不反对削减浪费，但应用手术刀而非电锯。与他的非马斯克表态（称 AI 为「巴别塔」）风格一致，都是比喻性、带神学色彩，不涉及具体公司或政策细节。</p>
+            <blockquote>“a scalpel rather than a chainsaw”<span class="tr">（削减预算应用）手术刀，而不是电锯。（2026 年 7 月采访）</span></blockquote>
+            <div class="src">来源：<a href="https://www.nyac.com/newsdetail/the-rev-adam-hamilton-is-running-to-unseat-republican-sen-roger-marshall-in-kansas-19917735" target="_blank" rel="noopener noreferrer">United Methodist News（经 NYAC 转载），2026-07</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Josh Turek<span class="mrole">参议员 · 艾奥瓦</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>频繁出现：筹款邮件、Substack 筹款信《世界首富 vs 工薪阶层黑马》、集会与电视访谈都用马斯克。2026 年 9 月 9 日市政厅谈社保税帽：马斯克、Gates、Bezos 只在年初头几分钟缴社保税，教师、警察、护士却缴一整年。背景：America PAC 曾花约 150 万美元投放针对他的广告——那是马斯克针对他，非他表态，但解释了他为何反复提马斯克。其涉马斯克表态比非马斯克科技表态多得多、具体得多。</p>
+            <blockquote>“Elon Musk doesn't get to decide who wins in this election.”<span class="tr">马斯克无权决定这场选举谁赢。（2026-11-01，Council Bluffs 集会）</span></blockquote>
+            <div class="src">来源：<a href="https://www.instagram.com/reel/DfOOYxTMJ4e/" target="_blank" rel="noopener noreferrer">Instagram 集会视频，2026-11-01</a>；<a href="https://www.desmoinesregister.com/story/news/politics/elections/2026/09/10/josh-turek-iowa-social-security-tax-cap/91677587007/" target="_blank" rel="noopener noreferrer">Des Moines Register，2026-09-10</a>；<a href="https://joshturek.substack.com/p/worlds-richest-man-vs-working-class" target="_blank" rel="noopener noreferrer">Substack 筹款信，2026-10-11</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Peggy Flanagan<span class="mrole">参议员 · 明尼苏达</span></span><span class="mtag t-both">两者皆有</span></div>
+            <p>全组最强之一，且是罕见的<b>产品级</b>批评。2026 年 10 月 26 日 Courier Minnesota 现场论坛上，被问及 Grok 的「去衣化」与针对妇女儿童的性化图片时，她称马斯克「需要为他的行为承担刑事责任」，并指其「在收买选举与官员」，主张公共资助选举。她的非马斯克表态（AI 是「生存威胁」）已是 32 人中最具体的之一，涉马斯克表态在语气上更进一步。</p>
+            <blockquote>“Musk needs to be held criminally accountable… You either believe in women or girls, or not.”<span class="tr">马斯克需要承担刑事责任……你要么相信女性与女孩，要么不信。（2026-10-26）</span></blockquote>
+            <div class="src">来源：<a href="https://couriermn.com/news/politics/peggy-flanagan-courier-minnesota-live/" target="_blank" rel="noopener noreferrer">Courier Minnesota，2026-10-27（已打开原文核实）</a></div>
+          </div>
+        </div>
+
+        <h4 class="mgroup">州长</h4>
+        <div class="mcards">
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Gina Hinojosa<span class="mrole">州长 · 得州</span></span><span class="mtag t-both">两者皆有</span></div>
+            <p>全组最强之一。竞选期间曾起诉要求公开马斯克与 Abbott 之间的邮件，指控前州长「出卖得州」。其「立即暂停新建数据中心」立场直接冲击 SpaceX 在 Brownsville 附近的 Colossal 3 等计划与 Starbase 扩建；<b>胜选后（11 月 5 日）首次记者会</b>即要求州公园与野生动物部门暂停与 SpaceX 商讨出售约 1300 英亩 Boca Chica 州立公园土地，称今后与马斯克公司的往来须以保护得州居民利益为条件。</p>
+            <blockquote>“Elon Musk gave Greg Abbott $5 million to try and buy this election.”<span class="tr">马斯克给了 Abbott 500 万美元，试图买下这场选举。（2026-10-27 声明）</span></blockquote>
+            <blockquote>“Greg Abbott gave Elon Musk the keys to the castle.”<span class="tr">Abbott 把城堡的钥匙交给了马斯克。（竞选采访）</span></blockquote>
+            <div class="src">来源：<a href="https://www.implicator.ai/musk-midterm-rout-texas-ai-buildout/" target="_blank" rel="noopener noreferrer">Implicator，2026-10</a>；<a href="https://www.investors.com/news/spacex-stock-elon-musk-texas-governor-hinojosa-boca-chica-land-sale-data-center-development-pause-tesla-spacex-impact/" target="_blank" rel="noopener noreferrer">Investor's Business Daily，2026-11-05</a>；<a href="https://www.cnn.com/2026/11/05/business/musk-texas-donations-midterms-spacex-tesla" target="_blank" rel="noopener noreferrer">CNN，2026-11-05</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Keisha Lance Bottoms<span class="mrole">州长 · 佐治亚</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>2025 年 5 月 20 日竞选启动视频即批评特朗普授权「一个未经选举的亿万富翁」威胁医保与社保，明确指向马斯克。2026 年 10 月 27 日 Long Play 访谈称马斯克花在反对她身上的钱「比本州历史上任何一次都多」，是亿万富翁试图「买下这场选举」。涉马斯克表态集中于选举金钱，与其通用数据中心政策并行。</p>
+            <blockquote>“buy this election… the people still have the power.”<span class="tr">（亿万富翁试图）买下这场选举……但权力仍在人民手中。（2026-10-27 访谈）</span></blockquote>
+            <div class="src">来源：<a href="https://www.threads.com/@crookedmedia/post/DfAlHGEEpla" target="_blank" rel="noopener noreferrer">Threads（Crooked Media），2026-10-27</a>；<a href="https://aurn.com/keisha-bottoms-governor-bid/" target="_blank" rel="noopener noreferrer">AURN，2025-05</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Amy Acton<span class="mrole">州长 · 俄亥俄</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>针对对手 Ramaswamy 的金主，语气情绪化、个人化，与其「有条件暂停数据中心」的政策表态形成对照。同帖文案称 Ramaswamy 与马斯克自 3 月以来花了 3500 万美元攻击她，「一点没起作用」。</p>
+            <blockquote>“I'm tired of Elon Musk and his money telling us who we should be and how we should live… no amount of money you and Elon spend is going to end this.”<span class="tr">我受够了马斯克和他的钱来告诉我们该成为什么人、该怎么生活……你和马斯克花多少钱也终结不了这一切。（2026-08-11 竞选演讲）</span></blockquote>
+            <div class="src">来源：<a href="https://www.facebook.com/reel/2563104724149137/" target="_blank" rel="noopener noreferrer">Facebook 演讲视频，2026-08</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Rob Sand<span class="mrole">州长 · 艾奥瓦</span></span><span class="mtag t-pass">被动 / 间接 / 旧表态</span></div>
+            <p>全组最弱一档：<b>没有直接点名谴责马斯克个人或其公司</b>。他的涉马斯克内容是通过批评州级「Iowa DOGE」工作组间接建立的——该工作组仿照联邦 DOGE，建议新雇员不再加入 IPERS 养老金；Sand 称削弱 IPERS 只会让人不愿从事公共服务。其竞选主线是审计／反腐，科技表态两边都不是主线。</p>
+            <blockquote>“Anyone who guts the engine for finding waste, fraud and abuse in government… probably shouldn't be listened to when they say they want to do anything DOGE-like.”<span class="tr">谁要是拆了政府里查浪费、欺诈与滥权的引擎……那他再说什么想搞 DOGE 式改革，都不该听。（2025 年 3 月，《纽约时报》相关报道）</span></blockquote>
+            <div class="src">来源：<a href="https://littlevillagemag.com/midterm-results-iowa-statewide-races/" target="_blank" rel="noopener noreferrer">Little Village，2026-11-06</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Aaron Ford<span class="mrole">州长 · 内华达</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>全组唯一以总检察长身份<b>直接对马斯克采取法律行动</b>的人。2025 年 2 月，他与其他 10 位总检察长起诉，指控特朗普违法将行政权授予马斯克、违反《任命条款》，未经国会批准设新部门、未经参议院同意授予其对整个联邦政府的广泛权力。2026 年 10 月竞选记者会又揭露对手 Lombardo 从特朗普的「亿万富翁朋友」（包括马斯克）处获得捐款。</p>
+            <blockquote>“The Trump administration has handed unchecked power over the federal government to an unelected and unvetted businessman who considers himself above the law. …Musk's actions are illegal, and we will stop them.”<span class="tr">特朗普政府把对联邦政府不受制约的权力，交给了一个未经选举、未经审查、自认为凌驾于法律之上的商人。……马斯克的行为是非法的，我们会阻止它。（2025 年 2 月诉讼声明）</span></blockquote>
+            <div class="src">来源：<a href="https://www.einpresswire.com/article-print/786209939/attorney-general-ford-files-landmark-multistate-lawsuit-to-stop-elon-musk-s-unconstitutional-power-grab" target="_blank" rel="noopener noreferrer">EIN Presswire（州总检察长办公室声明），2025-02（已打开原文核实）</a>；<a href="https://www.fordfornevada.com/news/ford-exposes-the-cost-of-lombardos-corruption-for-working-nevadans" target="_blank" rel="noopener noreferrer">竞选官网，2026-10</a></div>
+          </div>
+          <div class="mcard none">
+            <div class="mhead"><span class="mname">Jonathan Kreiss-Tomkins<span class="mrole">州长 · 阿拉斯加</span></span><span class="mtag t-none">无表态</span></div>
+            <p><b>未找到他本人点名马斯克的表态。</b>他是阿拉斯加候选人中唯一有详细 AI 政策计划的人（禁 deepfake、政治广告披露 AI、AI 公司担责、监管数据中心），但报道未引述他点名马斯克的原话。检索到的涉马斯克内容（如「废除开放初选的第 2 号措施由马斯克资助」）均为第三方说法，不计入。本页不从党派归属推断。</p>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Xavier Becerra<span class="mrole">州长 · 加州</span></span><span class="mtag t-pass">被动 / 间接 / 旧表态</span></div>
+            <p><b>2026 年竞选期间无直接涉马斯克表态。</b>仅有 2020 年 5 月任加州总检察长时的旧表态：针对 Tesla 违反 Alameda 县防疫令提前复工 Fremont 工厂，他对 CNBC 表示州一级「已准备好执法」。与其起诉 Meta／Amazon／Google 的纪录相比，他对马斯克的处理并不更突出——这是「非马斯克纪录强于涉马斯克纪录」的反向例外。</p>
+            <blockquote>“we're ready to enforce if we find that anyone is violating the state orders”<span class="tr">如果发现有人违反州长发布的州命令，我们已准备好执法。（2020 年 5 月）</span></blockquote>
+            <div class="src">来源：<a href="https://www.digitaltrends.com/cars/california-becerra-attorney-general-tesla-factory-enforcement/" target="_blank" rel="noopener noreferrer">Digital Trends，2020-05</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Phil Weiser<span class="mrole">州长 · 科罗拉多</span></span><span class="mtag t-pass">被动 / 间接 / 旧表态</span></div>
+            <p><b>有关联，但无主动攻击表态。</b>是马斯克的 xAI 于 2026 年 4 月 9 日起诉了他（时任科罗拉多总检察长），要求阻止该州 AI 反歧视法 SB 24-205 生效；司法部介入支持 xAI，法院随后批准暂停执行，该法后被废止／取代。关键在于：Weiser 本人此前已称该法「有问题」，并与 xAI、司法部<b>联合请求</b>暂停执行——他是被告兼和解方，不是谴责方。检索未找到他点名批评马斯克或 xAI 的竞选言论；其最具体的科技行动仍是非马斯克的 Meta 171 亿美元和解。</p>
+            <div class="src">来源：<a href="https://courtdocket.org/elon-musk-discrimination-lawsuits-tesla-spacex-and-xai/" target="_blank" rel="noopener noreferrer">CourtDocket（X.AI LLC v. Weiser, No. 1:26-cv-01515）</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Jocelyn Benson<span class="mrole">州长 · 密歇根</span></span><span class="mtag t-prod">具体公司 / 产品</span></div>
+            <p>全组最早、最具产品针对性的涉马斯克行动之一。2024 年 8 月 5 日，她与另外四州州务卿联名致信马斯克，要求「立即对 X 的 AI 助手 Grok 作出改变」——Grok 散布了 Harris 无资格参选的虚假信息（称 9 州选票截止期已过），信中要求 Grok 在被问及选举时引导用户至 CanIVote.org。同期她还启动了对马斯克支持的 America PAC 在密歇根活动的调查，涉及其「登记投票」栏目收集选民详细资料。2025 年 1 月州长竞选启动视频中，她称将「继续对抗任何欺骗我们、分裂我们、剥夺我们权利的恶霸或亿万富翁」。</p>
+            <div class="src">来源：<a href="https://incidentdatabase.ai/reports/4080/" target="_blank" rel="noopener noreferrer">AI Incident Database（五州务卿联名信存档），2024-08</a>；<a href="https://www.themidwesterner.news/2024/08/jocelyn-benson-continues-to-go-after-elon-musk-demands-x-fix-ai-search-assistant-to-prevent-false-information/" target="_blank" rel="noopener noreferrer">The Midwesterner，2024-08</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Amy Klobuchar<span class="mrole">州长 · 明尼苏达</span></span><span class="mtag t-prod">具体公司 / 产品</span></div>
+            <p>产品级批评最具体的一位。2026 年 1 月参议院听证会上，她严厉批评马斯克拥有的 Grok 未经同意篡改妇女与女孩照片；并在 X 上发帖称，若 X 不改变，她与 Ted Cruz 跨党派共同发起的《TAKE IT DOWN Act》将很快强制其删除非自愿性亲密图片（该法要求平台接通知后 48 小时内删除）。背景：明尼苏达 2026 年 8 月 1 日生效的反「去衣化」法亦遭 xAI 起诉，但 Klobuchar 本人并非该案当事人。她对 Google 等亦有长期反垄断立法纪录，但 Grok 是她唯一直接点名马斯克公司产品、并以本人立法相威胁的案例。</p>
+            <blockquote>“No one should find AI-created sexual images of themselves online—especially children. X must change this. If they don't, my bipartisan TAKE IT DOWN Act will soon require them to.”<span class="tr">任何人都不该在网上发现 AI 生成的自己的性化图片——尤其是儿童。X 必须改变这一点；如果不改，我跨党派的《TAKE IT DOWN 法案》很快就会强制他们改。（2026 年 1 月，X 帖文）</span></blockquote>
+            <div class="src">来源：<a href="https://m.economictimes.com/news/international/world-news/grok-altering-photos-of-women-girls-without-consent-klobuchar-rips-into-musk-owned-ai-in-senate/amp_videoshow/126551336.cms" target="_blank" rel="noopener noreferrer">Economic Times，2026-01-15</a>；<a href="https://attackfeed.com/elon-musk-is-playing-with-fire-all-the-legal-risks-that-apply-to-groks-deepfake-disaster-cyberscoop/" target="_blank" rel="noopener noreferrer">CyberScoop（经 AttackFeed 转载），2026-01</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Deb Haaland<span class="mrole">州长 · 新墨西哥</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>把马斯克与特朗普及「大 CEO」并列，未单独针对其公司。2025 年 4 月她带头参加 Albuquerque 的 Hands Off! 集会，抗议马斯克与特朗普政府对联邦雇员等的攻击；竞选官网转载的专栏称特朗普、马斯克与大企业 CEO「把椭圆形办公室变成了《华尔街之狼》里的公司董事会」；同年 3 月 Instagram 图文称「特朗普—马斯克关闭 USAID 也伤害了新墨西哥农民」。</p>
+            <blockquote>“Our country is in a tailspin while Donald Trump, Elon Musk, and their wealthy friends add to their bank accounts on the backs of everyday Americans.”<span class="tr">我们的国家正在失控下坠，而特朗普、马斯克和他们富有的朋友们却踩在普通美国人背上往自己账户里加钱。（2025 年 4 月专栏）</span></blockquote>
+            <div class="src">来源：<a href="https://debhaaland.com/2025/04/icymi-deb-haaland-pens-courier-newsroom-opinion-piece-outlining-hopeful-action-in-the-face-of-trump-chaos/" target="_blank" rel="noopener noreferrer">竞选官网（转载 Courier Newsroom 专栏），2025-04</a>；<a href="https://lakotalaw.org/resources/albuquerque-hands-off" target="_blank" rel="noopener noreferrer">Lakota Law，2025-04</a></div>
+          </div>
+          <div class="mcard none">
+            <div class="mhead"><span class="mname">Hannah Pingree<span class="mrole">州长 · 缅因</span></span><span class="mtag t-none">无表态</span></div>
+            <p><b>未找到她本人点名马斯克的表态。</b>检索到的两篇 Substack 文章都是评论者拿马斯克作陪衬（一篇讽刺她答不出马斯克著名的「你完成了什么」邮件；一篇把她领导的州长政策创新办公室与 DOGE 对比），不是 Pingree 本人的言论，不计入。</p>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">David Crowley<span class="mrole">州长 · 威斯康星</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>有威斯康星本地具体事由，比其通用数据中心表态更具体。2026 年 8 月 26 日，他就 La Crosse 县检察官决定不起诉马斯克在 2025 年威斯康星最高法院选举中承诺向选民发放 100 万美元支票一事表示「困惑」；同月在 AFL-CIO 背书声明中称对手 Tom Tiffany「抓住国会里的每个机会，把（工薪家庭）出卖给马斯克这样的亿万富翁」。未涉及马斯克公司的产业行为。</p>
+            <blockquote>“We are talking about someone who publicly talked about giving a million dollars to folks to actually go vote, which is absolutely against the law here in the state of Wisconsin.”<span class="tr">我们谈论的这个人，公开谈论要给人们发 100 万美元让他们去投票——这在威斯康星州绝对违法。（2026-08-26）</span></blockquote>
+            <div class="src">来源：<a href="https://www.votebeat.org/wisconsin/2026/08/26/elon-musk-wisconsin-voters-million-dollar-checks-no-criminal-charges/" target="_blank" rel="noopener noreferrer">Votebeat，2026-08-26</a>；<a href="https://wisaflcio.org/news/wisconsin-afl-cio-endorses-david-crowley-governor" target="_blank" rel="noopener noreferrer">Wisconsin AFL-CIO 背书声明，2026-08</a></div>
+          </div>
+        </div>
+
+        <h4 class="mgroup">众议员</h4>
+        <div class="mcards">
+          <div class="mcard none">
+            <div class="mhead"><span class="mname">Bobby Pulido<span class="mrole">众议员 · 得州 TX-15</span></span><span class="mtag t-none">无表态</span></div>
+            <p><b>未找到他本人涉马斯克的表态。</b>只找到马斯克针对他的花钱记录：America PAC 花逾 14.1 万美元发短信反对 Pulido。马斯克花钱反对他 ≠ 他发表过涉马斯克言论，两者不可混同。</p>
+            <div class="src">来源：<a href="https://www.sacurrent.com/news/texas-news/elon-musk-has-spent-more-than-6-million-backing-ken-paxtons-senate-race-over-past-few-weeks/" target="_blank" rel="noopener noreferrer">San Antonio Current，2026-09-29</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Bob Harvie<span class="mrole">众议员 · 宾州 PA-01</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>2025 年 4 月 3 日竞选启动声明即把马斯克列入「华盛顿在讨好的人」。2026 年 11 月 2 日拉票视频中又称「像马斯克这样的对手不希望他们赢，因为他们为亿万富翁工作，不为家庭、教师和选区工作」。他同时主张全国暂停新建数据中心；涉马斯克表态是其反金钱政治框架的一部分，与数据中心政策并行。</p>
+            <blockquote>“Washington is catering to special interests, lobbyists, and billionaires like Elon Musk instead of fighting for working families.”<span class="tr">华盛顿在迎合特殊利益、说客和马斯克这样的亿万富翁，而不是为工薪家庭而战。（2025-04-03 启动声明）</span></blockquote>
+            <div class="src">来源：<a href="https://www.gatorsports.com/story/news/politics/elections/congressional/2025/04/03/bucks-county-commissioner-bob-harvie-running-for-congress-pa-01-us-rep-brian-fitzpatrick-midterms/82791923007/" target="_blank" rel="noopener noreferrer">Gainesville Sun，2025-04-03</a></div>
+          </div>
+          <div class="mcard none">
+            <div class="mhead"><span class="mname">J.D. Ford<span class="mrole">众议员 · 印第安纳 IN-05</span></span><span class="mtag t-none">无表态</span></div>
+            <p><b>未找到他本人点名马斯克的表态。</b>检索只找到选举结果报道与一篇提及马斯克中期花钱的播客，未找到 Ford 本人的相关演讲、声明或帖文。这不表示他支持马斯克，只是公开检索中无其本人言论。</p>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Shannon Taylor<span class="mrole">众议员 · 弗吉尼亚 VA-01</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>有，但须注明出处背景：这句出自她 <b>2025 年弗吉尼亚州总检察长初选</b>的首支竞选广告（画面包括特朗普在白宫购买 Tesla、马斯克在 CPAC 举电锯），另有竞选邮件号召「告诉特朗普和马斯克：手别碰我们的民主、经济与自由」。Taylor 在该初选中落败，2026 年改选众议员获胜；其 2026 年众议员竞选中的涉马斯克言论未在检索中单独出现。</p>
+            <blockquote>“I'm running for Attorney General to beat back Trump and Musk.”<span class="tr">我竞选总检察长，就是为了打退特朗普和马斯克。（2025 年州总检察长初选广告）</span></blockquote>
+            <div class="src">来源：<a href="https://index.businessinsurance.com/businessinsurance/news/read/44768493/virginia_democrats_choose_nominee_to_challenge_gop_attorney_general_jason_miyares" target="_blank" rel="noopener noreferrer">Business Insurance，2025</a>；<a href="https://politicalemails.org/messages/1789013" target="_blank" rel="noopener noreferrer">PoliticalEmails 存档（竞选邮件）</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Elaine Luria<span class="mrole">众议员 · 弗吉尼亚 VA-02</span></span><span class="mtag t-both">两者皆有</span></div>
+            <p>全组少数在 2025 年就已就 <b>Starlink 具体合同</b>发声的人：2025 年 3 月 27 日众议院发言中，她指控待审法案将拆解联邦机构、以马斯克的 Starlink 取代 FAA 通信合同、给富人永久减税，称其为让「未经选举的亿万富翁」得利的「骗局」。到 2026 年竞选，其涉马斯克内容转为「对手金主」框架：9 月 10 日帖文列出「支持 Kiggans 的亿万富翁：马斯克、特朗普、Thiel」，称 America PAC 花 5000 美元支持对手、4500 美元反对她。</p>
+            <div class="src">来源：<a href="https://www.instagram.com/reel/DHtxASCv79y/" target="_blank" rel="noopener noreferrer">Instagram（Stansbury 转发其众议院发言），2025-03-27</a>；<a href="https://www.facebook.com/ElaineLuriava/posts/pfbid0TKVwYFaMFtHGMAdEMwhP71LrXywRYvJo5xceQMgxdsvUf4PNoPf3BRQz2aZLtLn9l" target="_blank" rel="noopener noreferrer">Facebook 帖文，2026-09-10</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Christina Bohannan<span class="mrole">众议员 · 艾奥瓦 IA-01</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>2025 年 6 月 17 日竞选启动声明即把对手与 DOGE、马斯克绑定。她的涉马斯克表态是借批评对手的 DOGE 立场间接建立的，未涉及其公司产品。另：America PAC 在 IA-01 花约 190 万美元反对她——为马斯克针对她，非本人表态。</p>
+            <blockquote>“From cutting Medicaid, to siding with DOGE's devastating cuts to Social Security, to enabling unelected, unaccountable billionaires like Elon Musk – Miller-Meeks has forgotten about us.”<span class="tr">从削减 Medicaid，到支持 DOGE 对社保的毁灭性削减，再到纵容马斯克这样未经选举、无人问责的亿万富翁——Miller-Meeks 已经忘了我们。（2025-06-17 启动声明）</span></blockquote>
+            <div class="src">来源：<a href="https://bohannanforcongress.com/announcement/" target="_blank" rel="noopener noreferrer">竞选官网启动声明，2025-06-17</a>；<a href="https://iowastartingline.com/news/politics/christina-bohannan-run-against-miller-meeks-ia-01-congress/" target="_blank" rel="noopener noreferrer">Iowa Starting Line，2025-06</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Lindsay James<span class="mrole">众议员 · 艾奥瓦 IA-02</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>核心是社保税帽——与 Turek、Trone Garriott 完全相同，是艾奥瓦三位众议员当选人的共享话术。2026 年 6 月 12 日她还批评对手在数百名艾奥瓦人失业时，却有时间庆祝马斯克成为「世界首位万亿富翁」。其非马斯克科技表态未见同等传播度。</p>
+            <blockquote>“I don't believe that Elon Musk should be paying the same amount into Social Security as a teacher in Cedar Rapids or Waterloo or Dubuque.”<span class="tr">我不认为马斯克缴纳的社保金额，应该和 Cedar Rapids、Waterloo 或 Dubuque 的一位教师一样多。（2026-10-09 最后一场辩论）</span></blockquote>
+            <div class="src">来源：<a href="https://www.kgloam.com/two-candidates-in-iowas-2nd-district-meet-for-final-debate/" target="_blank" rel="noopener noreferrer">KGLO，2026-10</a>；<a href="https://www.facebook.com/lindsayjamesIA/posts/pfbid02nUWFXMWHdvFfejnDS9CP599WaG1fZXrnpgnfBiKNEEyJL6MaGyAFC6vDVZTAQiXFl" target="_blank" rel="noopener noreferrer">Facebook 帖文，2026-10-02</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Sarah Trone Garriott<span class="mrole">众议员 · 艾奥瓦 IA-03</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>同样是社保／税收公平，而非马斯克公司。2026 年 10 月 27 日 KCCI 辩论结辩称对手投票「从医疗保健中砍掉 1 万亿美元，给马斯克税收赠予」；10 月 28 日视频称马斯克在 2024 年向对手 Nunn 的连任捐款逾 80 万美元，Nunn 回报以「永久、大规模减税」。</p>
+            <blockquote>“Right now we've got folks who are working the whole year and paying into Social Security. Meanwhile, people like Elon Musk are done paying in the first minutes of January 1.”<span class="tr">现在有人工作一整年都在缴社保；而像马斯克这样的人，在 1 月 1 日的头几分钟就缴完了。（2026-10-20，Des Moines 圆桌会）</span></blockquote>
+            <div class="src">来源：<a href="https://www.desmoinesregister.com/story/news/politics/elections/2026/10/21/sarah-trone-garriott-social-security-payroll-tax-cap-iowa/92347131007/" target="_blank" rel="noopener noreferrer">Des Moines Register，2026-10-21</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Mike McGuire<span class="mrole">众议员 · 加州 CA-01</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>只有一句，但确实存在——而且意味深长：上文档案里他是 32 人中<b>唯一找不到任何非马斯克科技表态</b>的人，而他唯一可找到的科技相关言论，恰恰是这一句关于马斯克的税收批评。样本极小，不能据此推断其科技立场。</p>
+            <blockquote>“They gutted healthcare, they're giving Elon Musk the biggest tax break in the history of America.”<span class="tr">他们掏空了医保，正在给马斯克美国历史上最大的税收减免。（2026-05-04，Chico News &amp; Review 专访，谈联邦税收）</span></blockquote>
+            <div class="src">来源：<a href="https://chico.newsreview.com/2026/05/04/cnrs-interview-with-state-senator-mike-mcguire/" target="_blank" rel="noopener noreferrer">Chico News &amp; Review，2026-05-04</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Amish Shah<span class="mrole">众议员 · 亚利桑那 AZ-01</span></span><span class="mtag t-person">马斯克本人 · 政治角色</span></div>
+            <p>有，但薄弱。Shah 本人直接点名马斯克的可核实材料只有一封亚利桑那民主党筹款邮件（2026 年 10 月 29 日）：称亿万富翁已花近 8 亿美元资助共和党中期候选人，「仅马斯克一人就超过 4.42 亿美元」——<b>该数字仅见 Facebook 截图转发，未在官网核对原文</b>（见文末）。无针对马斯克公司或 DOGE 的政策性批评。另有报道称 America PAC 在 AZ-01 花逾 50 万美元攻击 Shah，那是马斯克针对他。</p>
+            <div class="src">来源：<a href="https://www.facebook.com/sylviaintahoe/posts/pfbid02ziw2LB5ruW3Kmy66A7NdDTrWXknZcVNBiqeSkEntqik3kkJRZZ9h4ky3yHU2pU6Sl" target="_blank" rel="noopener noreferrer">Facebook 截图转发，2026-10-29</a></div>
+          </div>
+          <div class="mcard">
+            <div class="mhead"><span class="mname">Richard Ojeda<span class="mrole">众议员 · 北卡 NC-09</span></span><span class="mtag t-both">两者皆有</span></div>
+            <p>语言最激烈之一，也是全组唯一同时攻击 Starlink 军事用途与太空合同的人，涉马斯克公司的具体程度仅次于 Klobuchar／Flanagan／Benson。2026 年 10 月 26 日帖文批评马斯克承认 SpaceX 在《华尔街日报》报道后限制了乌克兰 Starlink 服务逾一周，剥夺乌军防御俄无人机的联网能力，称其为未经选举的个人单方面影响盟国作战。2026 年 7 月 7 日直播中他说「把马斯克移出画面，我们的政府不会崩溃」一句，被对手解读为威胁、支持者辩称意为「移出政治图景」——本页只记录原话，不采纳任何一方解读。其煽动性语言需与政策批评区分开。</p>
+            <blockquote>“Sending men back to the Moon and Sending men to Mars… That is their secret way of saying OUR TAX DOLLARS are going to pay for it while Elon Musk gets all the credit and keep his billions.”<span class="tr">送人重返月球、送人去火星……那是他们在隐晦地说：用我们的税款买单，马斯克拿走全部功劳、保住他的亿万财富。（2024 年 11 月前后，X 帖文）</span></blockquote>
+            <div class="src">来源：<a href="https://xstalk.com/profile/Ojeda4America/status/1856044146731168131" target="_blank" rel="noopener noreferrer">Xstalk 存档（X 帖文）</a>；<a href="https://www.facebook.com/holly.rose.5477/posts/pfbid0YTLkZ37oJ3GX6Nb5gzi7q5oEMtZ9xiRyYEbUbLUWAwRhQJSEn126SfeSH7t1rqc5l" target="_blank" rel="noopener noreferrer">Facebook 帖文（Starlink），2026-10-26</a>；<a href="https://secure.actblue.com/donate/richard-ojeda-mdc-ps" target="_blank" rel="noopener noreferrer">ActBlue 竞选页</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="新一届民主党多数的调查计划">
+        <h2 class="sec">单列：新一届民主党多数的调查计划 <span class="en">THE INVESTIGATION PLANS</span></h2>
+        <p class="sec-sub">这是党团层面的计划（涉及现任／候任领袖，非上文 32 人本人的表态），单独列出，以免与逐人言论混同。三条线放在一起看，马斯克的位置最清楚：<b>被点名最突出，但从不单独出现</b>。</p>
+        <div class="probe-grid">
+          <div class="probe">
+            <h3>1. 《华盛顿邮报》11 月 6 日报道：Apple、Meta、马斯克公司并列为「早期目标」</h3>
+            <p>报道称，民主党赢得参众两院多数后数日，正把 <b>Apple、Meta 和马斯克领导的公司</b>列为国会调查的早期目标（据两名知情人士；报道基于对 5 名国会工作人员、说客、风投与律师的匿名采访及审阅的会议录音）。三条调查线，事由各不相同：</p>
+            <ul>
+              <li><b>马斯克公司（独占两条线）：</b>其一，众议院着手调查特朗普据报使用马斯克的 AI 聊天机器人 <b>Grok</b> 策划抓捕委内瑞拉总统马杜罗的军事行动；其二，调查马斯克在 <b>DOGE</b> 的角色、Starlink／Starshield 在乌克兰被限速一事，以及 SpaceX 的联邦合同。</li>
+              <li><b>Apple：</b>涉其与 ICE（移民与海关执法局）追踪应用的关系——转载间表述有出入，一说「托管追踪 ICE 的应用」，一说「应特朗普政府要求下架分享 ICE 人员位置的应用」，<b>未能裁定</b>（见文末）。</li>
+              <li><b>Meta：</b>涉其在数据中心项目谈判中要求地方政府签署保密协议（NDA），不公开大型数据中心建设信息。</li>
+            </ul>
+            <p>范围还可能扩及：与特朗普家族及华尔街高管投资的公司获得的数十亿美元政府资金、与 DOGE 有关联的公司、国防承包商与金融机构。关键人物表态：众议院监督委员会候任主席 Robert Garcia 选举之夜在 X 上写「Lawyer up.」（请好律师吧）；众议院司法委员会候任主席 Jamie Raskin 称众议院将针对政府「被权钱交易腐败彻底毒化」的领域。</p>
+            <div class="src">来源：华盛顿邮报原文为付费墙，以下为多家转载／引述交叉核对——<a href="https://www.ndtvprofit.com/world/democrats-target-apple-meta-and-elon-musks-companies-in-planned-congressional-probes-heres-why-12294573/amp/1" target="_blank" rel="noopener noreferrer">NDTV Profit，2026-11-06（已打开核实）</a>；<a href="https://seekingalpha.com/news/4667941-democrats-prepare-corporate-probe-wave-targeting-apple-meta-musk-cos-report" target="_blank" rel="noopener noreferrer">Seeking Alpha</a>；<a href="https://biz.chosun.com/en/en-international/2026/11/07/UTDTP7NZRFAAHEDQQDYIKUUBPM/" target="_blank" rel="noopener noreferrer">Chosun Biz，2026-11-07</a></div>
+          </div>
+          <div class="probe">
+            <h3>2. 舞厅捐款问询（11 月 5 日，Blumenthal）：马斯克不在这条线的名单里</h3>
+            <p>预计 2027 年 1 月起任参议院常设调查小组委员会主席的参议员 Richard Blumenthal，11 月 5 日致函 <b>Apple、Meta、Google、Nvidia、Amazon、Microsoft 及其他白宫舞厅捐款人</b>，要求自愿提供与特朗普拟建白宫舞厅相关的捐款记录，并警告 1 月正式掌权后可能发出传票。其中 Apple 与 Nvidia 各认捐 2500 万美元，为单笔最大捐款之二；整个舞厅项目共筹得约 3.33 亿美元私人捐款。</p>
+            <p><b>注意：这份名单中没有单独点名马斯克或其公司。</b>马斯克是另一条调查线（Grok／DOGE）的主角，而不是这条「捐款换好处」线的主角——两条线并行，正说明框架是「特朗普—金主腐败」，而非只盯马斯克一人。</p>
+            <div class="src">来源：<a href="https://macdailynews.com/2026/11/06/democrats-target-apple-over-25-million-donation-to-white-house-state-ballroom-threatening-subpoenas/" target="_blank" rel="noopener noreferrer">MacDailyNews，2026-11-06</a>；<a href="https://www.ndtvprofit.com/world/democrats-target-apple-meta-and-elon-musks-companies-in-planned-congressional-probes-heres-why-12294573/amp/1" target="_blank" rel="noopener noreferrer">NDTV Profit，2026-11-06</a></div>
+          </div>
+          <div class="probe">
+            <h3>3. Groundwork Collaborative 181 页档案：马斯克是「主要目标之一」，且档案本身遭党内质疑</h3>
+            <p>进步智库 Groundwork Collaborative（执行主任 Lindsey Owens，曾任 Warren 参议员高级经济政策顾问）起草了一份 181 页档案，建议民主党掌控国会后对「政治腐败的企业目标」举行公开听证并发传票。点名目标包括 <b>Apple、马斯克的 Tesla 与 SpaceX、Amazon、Oracle</b>，另有 Ticketmaster／Live Nation、Paramount、GEO Group、World Liberty Financial、Trump Media、Intuit、Eli Lilly、养老院行业与化石燃料行业。具体建议有二：就「数据中心给美国家庭带来的成本」质询科技 CEO（目标包括马斯克、Meta 的 Zuckerberg、Anthropic 的 Dario Amodei）；就「2025 年数十亿美元利润却缴 0 美元联邦所得税」的说法质询马斯克与 Palantir 的 Alex Karp。</p>
+            <p><b>但这份档案的地位存疑：</b>《纽约邮报》称其中至少 83 节疑似部分由 AI 生成，遍布「TK」待填占位符与空白模板，多名党内人士斥之为「AI 垃圾」（AI slop）、「令人震惊的草率文件」，并认为它不会主导议程。Groundwork 称之为「living document」（内部研究汇编，非供公开），否认主要依赖 AI（自称 Pangram 检测显示 97% 为人工撰写）。Raskin 对最先报道此事的《Washington Sun》回应：<b>「We're not targeting particular corporations」</b>——针对的是「腐败的系统与网络」。该档案「已审阅」范围（Warren、众议院民主党党团领导、进步党团、 incoming 参议员幕僚长）仅见《Washington Sun》单方说法，未经独立证实。</p>
+            <div class="src">来源：<a href="https://nypost.com/2026/11/06/business/dossier-urging-democrats-to-go-to-war-with-corporate-america-ridiculed-by-party-insiders-ai-slop/" target="_blank" rel="noopener noreferrer">New York Post，2026-11-06（已打开核实）</a></div>
+          </div>
+        </div>
+        <p class="stance-note">小结：马斯克在调查计划中是唯一以个人姓名出现、独占 Grok 与 DOGE 两条线的人，是被点名最突出、最个人化的目标；但 Apple 与 Meta 与其并列为三大早期目标，舞厅线完全是一批公司，档案名单更长达十余家公司与行业。调查的公开理由是「企业与特朗普政府之间的利益交集／权钱交易」，而非马斯克公司的产品或市场行为本身。</p>
+      </section>
+
+      <section aria-label="未能核实与开放问题">
+        <h2 class="sec">未能核实 · 证据较弱 <span class="en">OPEN QUESTIONS</span></h2>
+        <div class="unverified">
+          <ul>
+            <li><b>Mike McGuire（CA-01）：</b>经多轮检索（竞选报道、候选人简介、选民指南），未找到他关于大科技公司、数据中心、AI 监管、隐私或反垄断的任何公开表态。其竞选报道主要围绕医保、关税、野火与反对特朗普政策。本页不从党派归属推断其立场。</li>
+            <li><b>Elaine Luria 的问卷答复</b>唯一来源是 Facebook 上转载的《Virginian-Pilot》问卷截图，未能打开原始报纸页面核实，证据强度低于直接报道，条目内已标注。</li>
+            <li><b>Amy Acton 的应用商店年龄验证要求</b>仅见于 Reason 胜选报道中的一句话，未找到她本人的详细引文或政策文本——她是全场唯一明确提及应用商店议题的当选人。</li>
+            <li><b>Hannah Pingree、Bobby Pulido、Richard Ojeda</b>仅找到一两句关于数据中心的通用表态，未找到关于具名公司、反垄断、隐私或应用商店的表态。</li>
+            <li><b>Amy Klobuchar</b> 任联邦参议员期间的反垄断纪录（如 2021 年著作《Antitrust》及相关立法）属于其此前公职身份，不计入本次「州长竞选表态」，本页只采用她 2026 年州长竞选期间的发言。</li>
+            <li>多位当选人尚未就职（2027 年 1 月上任），<b>选后表态极少</b>，本页绝大多数引文为竞选期间表态；就职后的委员会动作与立法提案不在本次检索范围内。</li>
+            <li><b>Roy Cooper 2024 年关于 X 虚假信息的表态</b>仅见 Livarava 二级转载，未找到 Cooper 办公室原声明或主流媒体原文，原始出处未能确认。</li>
+            <li><b>Apple 调查线的准确事由</b>在转载间有出入：一说「托管追踪 ICE 的应用」，一说「应特朗普政府要求下架分享 ICE 人员位置的应用」；《华盛顿邮报》原文为付费墙，未能直接读到，未能裁定。</li>
+            <li><b>马斯克本周期花钱总数各口径差异很大：</b>3.66 亿美元（NYT／路透，截至 2026 年 10 月初）、4.45–4.46 亿美元（FEC，至 10 月中）、4.74 亿美元（NYT，经 USA Today）、7.59 亿美元（两年累计，The Rising）——统计口径与截止期不同，本页不合并为单一数字；各候选人分项数字（如针对 Talarico 的约 2 亿／2.12 亿／2.24 亿美元）同样因来源与统计时点而异。</li>
+            <li><b>Sherrod Brown「特朗普与马斯克向 Husted 注入数十亿」</b>一语仅见 News18 视频摘要，未找到文字实录，未能独立核对原话。</li>
+            <li><b>Amish Shah 筹款邮件中「仅马斯克一人就超过 4.42 亿美元」</b>仅见 Facebook 截图转发，未在 Shah 官网或亚利桑那民主党官网核对原文。</li>
+            <li><b>涉马斯克「无表态」的 4 人</b>（Kreiss-Tomkins、Pingree、Pulido、J.D. Ford）结论基于公开检索未找到，不排除其在地方媒体、播客或未被索引的社交媒体帖文中有相关言论。</li>
+            <li><b>Groundwork 181 页档案的实际影响力</b>未经独立证实：其「已审阅」范围仅见《Washington Sun》单方说法，党内多名人士认为它不会主导议程。</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        <p>资料来源：逐人条目内均附原始出处链接（候选人纲领与问卷、辩论与采访报道、社交媒体原帖等），其中 Washington Examiner 参议员数据中心立场总表、Newsmax 关于 Flanagan 的报道、Cobb Courier 关于 Bottoms 的报道、USA Today 关于 Hinojosa 的报道经打开全文核实。检索于 2026 年 11 月 7 日完成。</p>
+        <p>口径说明：本页只收录名单内新当选者本人的公开表态；标为「言行对照 / 背景」的财务披露、捐款与过往投票纪录来自媒体报道，不是本人发言。涉马斯克部分同样只计本人说过的话——马斯克花钱反对某人（如对 Pulido、Bohannan 的 America PAC 开支）不算该人表态，条目内已分别注明。调查计划部分涉及党团与候任委员会主席，已与 32 人本人的表态分开单列。</p>
+        <p>涉马斯克部分来源说明：逐人条目均附出处链接；其中 Courier Minnesota 关于 Flanagan 的报道、EIN Presswire 关于 Ford 诉讼的声明、NDTV Profit 关于调查计划的转载、New York Post 关于 Groundwork 档案的报道经打开全文核实，其余为检索索引来源（2026 年 11 月 7 日检索）。</p>
+      </footer>
+
+    </div>
+
+    <script>
+      var THEMES = { dc: "数据中心", ai: "AI 安全与监管", anti: "反垄断与诉讼", kids: "儿童与社交媒体", app: "应用商店", contrast: "言行对照" };
+      var STANCE = {
+        pause: ["主张暂停", "b-pause"],
+        cond: ["有条件暂停", "b-cond"],
+        reg: ["管制而非暂停", "b-reg"],
+        na: ["未明确提暂停", "b-na"],
+        none: ["无可查表态", "b-none"]
+      };
+      var PEOPLE = [];
+
+      /* ================= 参议员 ================= */
+      PEOPLE.push(
+      {
+        id: "p-talarico", chamber: "senate", name: "James Talarico", cn: "", role: "参议员 · 得克萨斯州（翻盘）",
+        stance: "reg", level: "较具体", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "发布竞选纲领「Hold Data Centers Accountable Plan」（让数据中心负责计划）：设定联邦最低要求——数据中心自付基础设施与并网成本、使用闭环水系统、赋予地方社区批准／否决权、废除得州数据中心销售税豁免；<b>明确不支持全面暂停</b>。",
+            q: "Texas should be a leader when it comes to innovation and technology, but that only works if Texans get a say and get a share of that economic growth — and that's not what's happening right now.",
+            qt: "得州应在创新和科技上领先，但前提是得州人有发言权、能分享经济增长——现在不是这样。（奥斯汀记者会）",
+            s: [["Washington Examiner 参议员立场总表（已打开全文核实）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"]] },
+          { w: "post", t: "胜选报道总结其纲领：要「对抗大科技」，确保数据中心自付基建升级费用、不转嫁给本地消费者，并让公民分享 AI 利润增长。",
+            q: "take on big tech by ensuring data centers fund their own infrastructure upgrades rather than passing costs onto local consumers and giving citizens a cut of AI profit growth",
+            s: [["USA Today，2026-11-04", "https://www.usatoday.com/story/news/state/texas/2026/11/04/from-teacher-to-senator-how-talarico-flipped-texas-after-30-years/92608180007/"]] }
+        ]
+      },
+      {
+        id: "p-cooper", chamber: "senate", name: "Roy Cooper", cn: "", role: "参议员 · 北卡罗来纳州（翻盘，前州长）",
+        stance: "na", level: "一两句", themes: ["dc", "contrast"],
+        stmts: [
+          { w: "camp", t: "竞选纲领「Make Stuff Cost Less」（让东西便宜点）的能源部分，只谈成本分摊，没有具名公司，也没有提暂停。",
+            q: "Make sure data centers pay the full cost of all the power they use and prevent costs from being passed on to consumers.",
+            qt: "确保数据中心支付其用电的全部成本，防止成本转嫁给消费者。",
+            s: [["Decode the Vote 候选人页（更新至 2026-10-24）", "https://www.decodethevote.com/candidate/cand-fec-38af9156"], ["MarketWatch 胜选报道，2026-11-04", "https://www.marketwatch.com/livecoverage/midterm-elections-2026-results-economy-stocks/card/-make-stuff-cost-less-a-winning-democrat-s-pledge-o0gWh6A1xfb1i4kk0WHi"]] }
+        ],
+        caveat: "<b>背景：</b>Cooper 任州长期间曾积极招商引进数据中心，2026 年竞选立场被多家媒体描述为「转向」。本次检索未找到他针对具名公司（Google／Amazon／Meta 等）的表态。"
+      },
+      {
+        id: "p-jackson", chamber: "senate", name: "Troy Jackson", cn: "", role: "参议员 · 缅因州（翻盘）",
+        stance: "pause", level: "较具体", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "<b>支持暂停数据中心建设</b>，并发布「Agency over AI」计划：企业自付电源与升级费用、保障 AI 不取代工人、遵守环保规则；称会签署此前被州长 Mills 否决的全州临时禁令法案。",
+            q: "AI may be new… but the political question is old… Who benefits, who pays, and who decides? …I can assure you that tech billionaires will not be deciding this alone and not be getting their way.",
+            qt: "AI 也许是新的，但政治问题是老的……谁受益、谁买单、谁决定？科技亿万富翁不会独自决定这件事，也不会如愿以偿。",
+            s: [["Washington Examiner 参议员立场总表（已核实）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"]] },
+          { w: "camp", t: "2026 年 10 月辩论中担忧电价与供水，态度比「监管」更进一步。",
+            q: "I'm not really supportive of data centers, but I understand it may be something that we have to deal with… This is something that obviously we have to stop. We have to slow down.",
+            qt: "我其实并不支持数据中心，但我理解这可能是我们不得不面对的事……这件事显然必须停下来，必须放慢。",
+            s: [["New York Post，2026-10-15", "https://nypost.com/2026/10/15/us-news/anti-data-center-protester-crashes-maine-senate-debate-between-susan-collins-and-troy-jackson/"]] }
+        ]
+      },
+      {
+        id: "p-brown", chamber: "senate", name: "Sherrod Brown", cn: "", role: "参议员 · 俄亥俄州（翻盘，时隔两年重返参议院）",
+        stance: "reg", level: "较具体", themes: ["dc", "contrast"],
+        stmts: [
+          { w: "camp", t: "把数据中心打成竞选核心议题：称对手、时任参议员 Jon Husted 是「数据中心的代言人」，指其任副州长期间推动数据中心税收优惠；Brown 投入数百万美元投放相关广告。主张数据中心支付全部公用事业成本、使用闭环水系统、取消税收优惠；<b>未主张全面暂停</b>。",
+            q: "the face of data centers",
+            qt: "（称 Husted 为）数据中心的代言人。",
+            s: [["Daily Caller，2026-11-02", "https://dailycaller.com/2026/11/02/ohio-data-center-senate-race-jon-husted-sherrod-brown-big-tech-crypto-donations-lobbyists-fairshake-super-pac-coinbase-andreessen-horowitz"], ["Washington Examiner（已核实）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"]] },
+          { w: "camp", t: "竞选网站与社媒帖文把「对抗大科技与数据中心」列入胜选后五大优先事项。",
+            q: "Ohioans shouldn't be forced to subsidize these costs. …confronting Big Tech and data centers",
+            qt: "俄亥俄人不应被迫补贴这些成本。……对抗大科技与数据中心。",
+            s: [["竞选网站（经 Washington Examiner 引述）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"], ["Threads 帖文，2026-10-16", "https://www.threads.com/@sherrod/post/Dej0JmWkYqb"]] }
+        ],
+        caveat: "<b>言行对照：</b>其 9 月 4 日竞选广告画面出现一家 Google 数据中心（2023 年开业，位于 Lancaster），而 Google 的企业 PAC 及游说者曾向 Brown 竞选捐款——Fox News 对此提出质疑。（Florida Sun Journal 转载 Fox News Digital，2026-09-19）"
+      },
+      {
+        id: "p-andrews", chamber: "senate", name: "Annie Andrews", cn: "", role: "参议员 · 南卡罗来纳州（翻盘，补选）",
+        stance: "pause", level: "较具体", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "<b>呼吁全州暂停新建数据中心两年</b>，并呼吁取消数据中心税收优惠。2026 年 9 月在 Colleton County 法院外发言；同时表示希望南卡获得新投资与高薪工作，但不能以威胁农民、社区、产权与生活品质为代价。",
+            q: "People in this community and all across South Carolina are fed up with the data centers that are being built, and they deserve a say in what gets built in their own backyard… People are worried about what this means for their land, their water, their power bills, and their way of life.",
+            qt: "这个社区和全南卡的人都受够了正在建的这些数据中心，他们有权决定自家后院建什么……人们担心的是自己的土地、水、电费账单和生活方式。",
+            s: [["Washington Examiner 参议员立场总表（已核实）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"]] }
+        ]
+      },
+      {
+        id: "p-hamilton", chamber: "senate", name: "Adam Hamilton", cn: "", role: "参议员 · 堪萨斯州（翻盘）",
+        stance: "reg", level: "较具体", themes: ["dc", "ai", "contrast"],
+        stmts: [
+          { w: "camp", t: "2026 年 10 月接受 Politico 采访时称 AI 正迅速成为「巴别塔」，主张美国政府帮助<b>放慢 AI 发展速度</b>，以便先立好规则。",
+            q: "Tower of Babel … slow down … so we can create the right solutions and safeguards.",
+            qt: "（AI 像）巴别塔……（政府应帮助）放慢速度，以便我们制定正确的解决方案与保障措施。",
+            s: [["New York Post，2026-10-20", "https://nypost.com/2026/10/20/us-news/kansas-dem-adam-hamilton-who-made-millions-on-big-tech-stocks-now-running-away-from-ai-data-center-boom/"]] },
+          { w: "camp", t: "反对给在社区建数据中心的大企业税收优惠；<b>未主张全面暂停</b>，主张地方决定。",
+            q: "We shouldn't be giving tax breaks to massive corporations building data centers in our communities… I will support what's in the best interest for Kansas, not big tech companies.",
+            qt: "我们不该给在我们社区建数据中心的大企业税收优惠……我支持的是堪萨斯的最大利益，不是大科技公司的。",
+            s: [["Washington Examiner（已核实）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"], ["New York Post，2026-10-20", "https://nypost.com/2026/10/20/us-news/kansas-dem-adam-hamilton-who-made-millions-on-big-tech-stocks-now-running-away-from-ai-data-center-boom/"]] }
+        ],
+        caveat: "<b>言行对照（财务披露，非本人表态）：</b>其 2026 年 6 月提交参议院的财务披露显示，持有 Google、Meta、Microsoft、Oracle 股票 110 万至 350 万美元，Nvidia、Qualcomm、Broadcom 12.6 万至 43 万美元，<b>Apple 股票逾 700 万美元</b>；净资产最高达 2000 万美元。一边主张放慢 AI、一边重仓科技股，是本次检索中最大的言行对照案例。（New York Post，2026-10-20）"
+      },
+      {
+        id: "p-turek", chamber: "senate", name: "Josh Turek", cn: "", role: "参议员 · 艾奥瓦州（翻盘）",
+        stance: "reg", level: "较具体", themes: ["dc", "ai"],
+        stmts: [
+          { w: "camp", t: "<b>不支持全面暂停数据中心</b>，但支持联邦层面监管：不再给企业税收优惠、要求闭环冷却系统、保护水资源。",
+            q: "I am absolutely in favor of some regulations on data centers. …We want to make sure large corporations are paying their fair share, not getting tax breaks…",
+            qt: "我绝对赞成对数据中心施加一些监管。……我们要确保大公司支付公平份额，而不是拿税收优惠……",
+            s: [["Washington Examiner（已核实）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"], ["USA Today，2026-09-30（经 Wikipedia 引用）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"]] },
+          { w: "camp", t: "2026 年 10 月 12 日 Instagram 视频：点名 <b>Google</b> 在其家乡 Council Bluffs 外的大型数据处理中心，居民反映电价上涨；主张闭环冷却（可节水 70–90%），并称 AI 将根本改变社会，需要在就业保护、儿童安全、网络安全、选举等方面的「常识性监管」。另：2026 年他在艾奥瓦州众议院共同发起「维修权」（right-to-repair）法案并获众议院通过（未在州参议院推进）。",
+            s: [["Instagram 视频，2026-10-12", "https://www.instagram.com/reel/DeYuV8TqsTA/"]] }
+        ]
+      },
+      {
+        id: "p-flanagan", chamber: "senate", name: "Peggy Flanagan", cn: "", role: "参议员 · 明尼苏达州（守住席位，原副州长）",
+        stance: "reg", level: "最强硬 · AI 安全", themes: ["dc", "ai", "kids", "contrast"], wide: true,
+        stmts: [
+          { w: "camp", t: "<b>本次检索中最强的 AI 安全表态。</b>2026 年 7 月民主党初选辩论中称失控的 AI 是生存威胁；其竞选团队称：在国会要求独立安全测试、赋予监管机构执法权、确立 AI 致害法律责任之前，应认真考虑暂停进一步的高级 AI 开发。",
+            q: "existential threat to us if it gets out of control … she believes we should seriously consider a pause on further advanced AI development, without it the consequences could have catastrophic implications.",
+            qt: "（AI）若失控，将是对我们的生存威胁……她认为应认真考虑暂停进一步的高级 AI 开发，否则后果可能是灾难性的。",
+            s: [["Newsmax，2026-10-12（已打开全文核实）", "https://www.newsmax.com/politics/peggy-flanagan-minnesota-senate-race-ai/2026/10/12/id/1272499"]] },
+          { w: "camp", t: "数据中心方面立场相反：<b>不支持禁令</b>，但反对税收优惠、支持地方决定、呼吁<b>禁止数据中心项目中的保密协议</b>，要求工会劳工与遵守州环保标准。",
+            q: "it absolutely is troubling to me that we seem to be moving at the speed of corporate interests and not of community, and we have to determine who benefits.",
+            qt: "令我不安的是，我们似乎在按企业利益的速度、而不是社区的速度前进；我们必须弄清谁在受益。",
+            s: [["Washington Examiner（已核实）", "https://www.washingtonexaminer.com/news/campaigns/congressional/4757925/candidates-senate-races-stance-data-centers/"], ["Blandin on Broadband，2026-10-22（已核实）", "https://blandinonbroadband.org/2026/10/22/data-centers-come-up-in-mn-senate-race-views-from-peggy-flanagan-and-michele-tafoya/"]] },
+          { w: "camp", t: "2026 年 10 月 26 日现场活动：被问及 AI 聊天机器人与儿童保护时，主张对青少年与 AI／聊天机器人互动实施严格监管，指出聊天机器人会收集对话者数据，科技行业领袖必须被问责。",
+            q: "these folks have to be held accountable.",
+            qt: "这些人必须被问责。",
+            s: [["Courier Minnesota，2026-10-26", "https://couriermn.com/news/politics/peggy-flanagan-courier-minnesota-live/"]] }
+        ],
+        caveat: "<b>背景（非本人表态）：</b>2026 年 7 月 13 日至 8 月 12 日，12 名 AI 行业员工向其竞选捐款至少 4.1 万美元，其中 8 人来自 <b>Anthropic</b>。（Newsmax，2026-10-12）该报道中关于马斯克／Grok 的部分不在本页范围。"
+      }
+      );
+
+      /* ================= 州长 ================= */
+      PEOPLE.push(
+      {
+        id: "p-hinojosa", chamber: "gov", name: "Gina Hinojosa", cn: "", role: "州长 · 得克萨斯州（翻盘）",
+        stance: "pause", level: "最强硬 · 州长", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "主张在立法机关通过更强保护措施前<b>暂停新建数据中心</b>，指责企业利用得州人、监管缺失，称 Abbott 制造了「数据中心的狂野西部」；具体要求包括禁止保密协议、让居民对新项目有更大发言权、要求企业证明项目不会推高家庭水电费。",
+            q: "Wild West of data centers",
+            qt: "数据中心的狂野西部。",
+            s: [["Fast Company，2026-11-04", "https://www.fastcompany.com/91634444/texas-wanted-to-power-americas-ai-boom-its-new-governor-could-change-everything"]] },
+          { w: "post", t: "2026 年 11 月 5 日对 CNN 说：数据中心进驻的多是农村社区，没有规则保护得州人；在保护法律出台之前，必须停下现在的做法。",
+            q: "It is not that I hate data centers. I hate the way they are taking advantage of Texas, and that stops when I'm governor.",
+            qt: "不是我讨厌数据中心，我讨厌的是它们占得州便宜的方式——我当州长后，这一切就停。",
+            s: [["USA Today，2026-11-05（已打开全文核实）", "https://www.usatoday.com/story/news/nation/2026/11/05/texas-is-done-with-data-centers-until-further-notice-new-governor-says/92634485007/"]] }
+        ]
+      },
+      {
+        id: "p-bottoms", chamber: "gov", name: "Keisha Lance Bottoms", cn: "", role: "州长 · 佐治亚州（翻盘）",
+        stance: "pause", level: "较具体", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "2026 年 9 月 Cobb County 记者会：主张全州<b>临时暂停</b>新建数据中心，全面评估对环境、电费与社区的影响；表示完全认同州公共服务委员会委员 Peter Hubbard 的四点方案：清洁能源供电并自付基建、不用保密协议、保护社区与自然资源、尽可能使用工会劳工。",
+            q: "Let us take a pause, assess fully, assess comprehensively, assess the impact that these data centers are having on our environment, on our utility bills… We're going to use every tool in the toolbox to make sure that that pause takes place statewide.",
+            qt: "让我们先暂停，全面、彻底地评估这些数据中心对我们的环境、电费账单的影响……我们会用工具箱里的每一样工具，确保暂停在全州落实。",
+            s: [["Cobb Courier／Georgia Recorder，2026-09-29（已打开全文核实）", "https://cobbcountycourier.com/2026/09/debate-over-data-center-growth-in-georgia-heats-up-race-for-governor/"]] },
+          { w: "post", t: "2026 年 11 月 4 日称将立即签署行政令实施暂停，并审查该州的数据中心税收优惠。",
+            q: "sign an executive order for that pause",
+            qt: "（将立即）签署行政令实施暂停。",
+            s: [["AI Stock Wire，2026-11-06 更新", "https://aistockwire.com/blog/texas-georgia-data-center-pause-governors-amazon-microsoft-november-2026"]] }
+        ]
+      },
+      {
+        id: "p-acton", chamber: "gov", name: "Amy Acton", cn: "", role: "州长 · 俄亥俄州（翻盘）",
+        stance: "cond", level: "较具体", themes: ["dc", "app"],
+        stmts: [
+          { w: "camp", t: "2026 年 7 月 27 日宣布支持<b>有条件暂停</b>新建数据中心：除非项目承担 100% 公用事业成本、自建电力、使用工会劳工、符合环保标准、透明（无地方保密协议）、提供社区收益、优先选址于棕地／已开发工业用地而非农田，否则不得推进。",
+            q: "We are absolutely open, but we're not for sale.",
+            qt: "我们绝对开放，但我们不出售。（经报道转述）",
+            s: [["Smarter.Vote 候选人页（更新至 2026-11-02）", "https://smarter.vote/races/oh-governor-2026/amy-acton/"], ["Ohio Capital Journal（经 The Digital Free Press 2026-10-25 选民指南引用）", "https://www.thedigitalfreepress.com/post/ohio-governor-voter-guide-acton-ramaswamy-kissick-data-centers-property-taxes"]] },
+          { w: "camp", t: "其竞选承诺中包括一项<b>应用商店年龄验证要求</b>（app store age verification）——本次检索中唯一明确提及应用商店议题的当选人，但未找到她本人关于该要求的详细引文。",
+            s: [["Reason，2026-11-04", "https://reason.com/2026/11/03/amy-acton-beats-vivek-ramaswamy-in-ohio-governors-race/"]] }
+        ]
+      },
+      {
+        id: "p-sand", chamber: "gov", name: "Rob Sand", cn: "", role: "州长 · 艾奥瓦州（翻盘）",
+        stance: "na", level: "较具体", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "竞选网站主张数据中心自付费用、取消行业税收优惠、禁止新项目保密协议；其竞选广告称艾奥瓦家庭的「新邻居」是企业对冲基金、外州大公司和数据中心。",
+            q: "pay their own way, including covering any increase in costs on utilities so that your bills don't go up one cent.",
+            qt: "（数据中心须）自付费用，包括承担公用事业成本的任何增加，让你的账单一分钱都不涨。",
+            s: [["Daily Caller，2026-10-26", "https://dailycaller.com/2026/10/26/democrats-governor-races-data-center-moratorium-amy-acton-david-jolly-keisha-lance-bottoms-gina-hinojosa"]] },
+          { w: "camp", t: "对 Des Moines Register 的表态，把话说到「不保护大公司」。",
+            q: "Data centers shouldn't get a free ride while Iowans pay the price… I'm not interested in protecting big corporations. I'm interested in protecting Iowa families.",
+            qt: "艾奥瓦人买单，数据中心不能搭便车……我没兴趣保护大公司，我要保护的是艾奥瓦家庭。",
+            s: [["Des Moines Register，2026-10-07", "https://www.desmoinesregister.com/story/news/politics/elections/2026/10/07/zach-lahn-rob-sand-iowa-governor-election-big-issues/92045458007/"]] }
+        ]
+      },
+      {
+        id: "p-aford", chamber: "gov", name: "Aaron Ford", cn: "", role: "州长 · 内华达州（翻盘）",
+        stance: "na", level: "较具体", themes: ["dc", "ai"],
+        stmts: [
+          { w: "camp", t: "2026 年夏季推出数据中心纲领：<b>暂停新的数据中心税收减免</b>（注意：暂停的是减免，不是建设），要求开发商避免居民能源成本上涨，并主张强有力监管以保护就业免受 AI 冲击；曾在 Teamsters Local 14 举办首场相关市政厅会议。",
+            s: [["Reuters，2026-10-28（经 1027 WBOW 转载）", "https://1027wbow.com/2026/10/28/nevada-unions-politicians-caught-between-ai-job-creation-and-destruction/"]] },
+          { w: "camp", t: "监控技术：2026 年 8 月表示不支持在没有严格规则与基本保障的情况下使用 Flock 摄像头，承诺推动 2027 年具约束力的立法：留存上限 30 天、强制公开审计、禁止为州外堕胎或民事移民执法共享数据。",
+            q: "stringent rules and essential guardrails",
+            qt: "严格规则与基本保障。",
+            s: [["NV Gov 2026 候选人比较页", "https://www.nvgov2026.org/compare/issues/technology.html"]] }
+        ],
+        caveat: "<b>州情背景：</b>Switch、Google、Apple、AWS 等企业的数据中心自 2021 年以来已获逾 3.4 亿美元内华达州补贴。（同上比较页）"
+      },
+      {
+        id: "p-kreiss", chamber: "gov", name: "Jonathan Kreiss-Tomkins", cn: "", role: "州长 · 阿拉斯加州（翻盘）",
+        stance: "pause", level: "较具体", themes: ["dc", "ai", "contrast"],
+        stmts: [
+          { w: "camp", t: "2026 年 9 月 8 日 Anchorage 论坛上明确支持暂停；其纲领还包括：新建项目须经地方批准、防止电费转嫁给现有用户、<b>AI 公司产品造成伤害时须在阿拉斯加法院承担责任</b>；另支持禁止误导公众的 AI 生成虚假图片的立法，以及要求政治广告披露 AI 生成内容。",
+            q: "I support a moratorium on data center development in Alaska until the Legislature can pass a comprehensive regulatory framework for that development in Alaska.",
+            qt: "我支持暂停阿拉斯加的数据中心开发，直到立法机关通过一套全面的监管框架。",
+            s: [["Alaska Beacon（经 Randolph-MN Messenger 转载），2026-09", "https://www.randolphmn.com/premium/stories/where-do-alaskas-four-governor-candidates-stand-on-data-centers,174560"], ["The Alaska Story，2026-11-06", "https://thealaskastory.com/at-37-jkt-is-on-the-verge-of-making-alaska-history-his-path-is-unusual/"]] }
+        ],
+        caveat: "<b>背景（非本人表态）：</b>6 名 Anthropic 员工合计向其竞选捐款 37.2 万美元，其中 Drake Thomas 捐 10 万美元；其本人称，从事 AI 监管工作吸引了持同样关切的捐款人。（Alaska Beacon／Alaska Reporter 报道）"
+      },
+      {
+        id: "p-becerra", chamber: "gov", name: "Xavier Becerra", cn: "", role: "州长 · 加利福尼亚州（民主党守住）",
+        stance: "na", level: "最具体 · 具名公司", themes: ["anti", "ai"], wide: true,
+        stmts: [
+          { w: "camp", t: "<b>全场具名公司最具体的一位。</b>2026 年 9 月 30 日与 Steve Hilton 的唯一一场 CNN 辩论：Hilton 质疑其受大科技与 AI 资助，Becerra 以起诉纪录回应；同场还称必须保护面临被 AI 夺走工作的工人。",
+            q: "The reason you can trust me is because I have sued Meta, I have sued Amazon, I have sued Google… The difference between us, Steve, is I have a record of having done that. You just say the talk, but you've never done it.",
+            qt: "你们可以信任我的原因是，我起诉过 Meta、起诉过 Amazon、起诉过 Google……区别在于，Steve，我有实际纪录，而你只是空谈，从没做过。",
+            s: [["USC Annenberg Media，2026-10-07", "https://uscannenberg-uscannenberg-prod.web.arc-cdn.net/2026/10/07/hilton-and-becerra-go-head-to-head-on-economy-and-ai-during-only-scheduled-debate/"]] },
+          { w: "camp", t: "2026 年 2 月 Black Action Alliance 问卷（逐字刊登）：AI 应补充而非取代工人；将利用州政府的采购权、许可权与投资资本，与科技公司谈判有约束力的社区收益协议，包括本地招聘目标与学徒计划。",
+            q: "AI is supposed to supplement workers, not supplant them. It should support workers, not replace them.",
+            qt: "AI 应当补充工人，而非取代工人；应当支持工人，而非替换工人。",
+            s: [["Black Action Alliance 问卷（PDF），2026-02", "https://blackactionalliance.org/__l5e/assets-v1/2461e01d-53a0-482b-814c-2c89bbfbbc8a/Xavier_Becerra_Questionnaire_Responses.pdf"]] }
+        ],
+        caveat: "<b>注意：</b>其起诉 Meta／Amazon／Google 的纪录来自任加州总检察长（2017–2021）时期的工作，辩论中作为竞选论据重提；NY Post 2026-10-31 报道亦称他把对 Google、Meta 的反垄断与隐私诉讼列为主要政绩。"
+      },
+      {
+        id: "p-weiser", chamber: "gov", name: "Phil Weiser", cn: "", role: "州长 · 科罗拉多州（民主党守住）",
+        stance: "na", level: "较具体 · 点名 Meta", themes: ["anti", "kids", "dc"],
+        stmts: [
+          { w: "rec", t: "任科罗拉多州总检察长期间<b>共同主导与 Meta 达成的 171 亿美元和解</b>（47 个州等参与），要求对年轻用户实施使用时长等限制；科罗拉多州将获得 6.15 亿美元（分 9 年）。",
+            q: "There is now a sense of accountability and a public reckoning of social media.",
+            qt: "现在，社交媒体有了问责感与一场公众清算。",
+            s: [["Indian Express，2026-10-25", "https://indianexpress.com/article/technology/tech-news-technology/how-a-legal-backlash-against-big-tech-is-forcing-big-changes-10935823/lite/"], ["Colorado Public Radio 选民指南，2026-09-25", "https://www.cpr.org/2026/09/25/vg-2026-phil-weiser-voter-guide/"]] },
+          { w: "camp", t: "竞选期间（Coloradoan 问卷，2026 年 10 月 8 日）将青少年心理健康列为优先事项；数据中心方面（2026 年 2 月 Fort Collins 市政厅）称不能允许数据中心推高电价，将按各社区情况监管、优先保护环境与合理电价。",
+            q: "taking on Big Tech when they allow social media algorithms and content to harm our kids. …(Data centers) cannot be allowed to push up our electricity rates.",
+            qt: "当大科技允许社交媒体算法与内容伤害我们的孩子时，与之对抗。……不能允许（数据中心）推高我们的电价。",
+            s: [["Coloradoan，2026-10-08", "https://www.coloradoan.com/story/news/politics/elections/2026/10/08/phil-weiser-running-for-colorado-governor-2026-election/91776459007/"], ["Colorado State University Collegian，2026-02", "https://collegian.com/wp-json/wp/v2/posts/352049"]] }
+        ]
+      },
+      {
+        id: "p-benson", chamber: "gov", name: "Jocelyn Benson", cn: "", role: "州长 · 密歇根州（民主党守住）",
+        stance: "pause", level: "中等具体", themes: ["dc", "ai", "contrast"],
+        stmts: [
+          { w: "camp", t: "2026 年 9 月呼吁<b>全州暂停新建数据中心</b>，直至出台新规则；另主张对 AI 生成的政治广告提高透明度，并支持在缺乏充分保护时暂停项目。",
+            q: "put a moratorium on data centers, end their tax breaks, and stop them from raising our electric bills.",
+            qt: "对数据中心实施暂停、取消其税收优惠、阻止它们推高我们的电费。",
+            s: [["The Midwesterner，2026-10", "https://www.themidwesterner.news/2026/10/jocelyn-benson-off-to-eighth-scheduled-california-fundraiser-just-3-weeks-before-election-day/"], ["Blockonomi，2026-11-05", "https://blockonomi.com/could-democrats-burst-the-ai-bubble-new-governors-push-data-center-pauses/"], ["AZAT TV，2026-11-04", "https://azat.tv/en/jocelyn-benson-leads-michigan-governors-race-2026/"]] }
+        ],
+        caveat: "<b>言行对照（对手阵营与媒体报道，非本人表态）：</b>她此前在初选期间曾称数据中心是「难以置信的机会」（incredible opportunity），9 月立场转变受到对手与媒体质疑；其丈夫曾任 Related Companies 副总裁，负责 Saline Township 一个与 <b>OpenAI／Oracle</b> 相关的数据中心项目。"
+      },
+      {
+        id: "p-klobuchar", chamber: "gov", name: "Amy Klobuchar", cn: "", role: "州长 · 明尼苏达州（由参议员转任）",
+        stance: "reg", level: "一两句", themes: ["dc", "ai"],
+        stmts: [
+          { w: "camp", t: "<b>未支持暂停数据中心。</b>与对手 Lisa Demuth 均主张禁止数据中心交易中的保密协议；Klobuchar 还要求开发商在地方批准前披露用电量、用水量、备用发电机、噪音、电网升级及所寻求的每一项税收优惠。",
+            s: [["Daily Caller，2026-10-26", "https://dailycaller.com/2026/10/26/democrats-governor-races-data-center-moratorium-amy-acton-david-jolly-keisha-lance-bottoms-gina-hinojosa"]] },
+          { w: "camp", t: "2026 年 10 月 20 日州长辩论：双方均称地方社区应有权批准或否决数据中心，总体上支持建设、反对大幅新增州级监管；双方亦同意 AI 开发需要保障措施。",
+            s: [["Blandin on Broadband，2026-10-20", "https://blandinonbroadband.org/2026/10/20/data-centers-come-up-in-mn-gubernatorial-debate/"]] }
+        ],
+        caveat: "<b>口径说明：</b>Klobuchar 任联邦参议员期间的反垄断纪录（如 2021 年著作《Antitrust》及相关立法）属于其此前公职身份，不计入本次「州长竞选表态」；本条只采用其 2026 年州长竞选期间的表态。"
+      },
+      {
+        id: "p-haaland", chamber: "gov", name: "Deb Haaland", cn: "", role: "州长 · 新墨西哥州（民主党守住）",
+        stance: "pause", level: "较具体", themes: ["dc", "contrast"],
+        stmts: [
+          { w: "camp", t: "2026 年 9 月 17 日于 Albuquerque 宣布八点数据中心问责计划，承诺<b>上任首日以行政令暂停新建大型数据中心</b>，直至立法机关通过更严格的环保与劳工保护；计划要求未来项目满足零碳标准、保护空气／土地／栖息地、自建可再生能源基础设施、禁止保密协议。",
+            q: "If elected Governor, we will not move forward with any project until the state has adopted robust protections along with strong enforcement mechanisms.",
+            qt: "如果我当选州长，在本州建立起强有力的保护措施和执行机制之前，任何项目都不会推进。",
+            s: [["Las Cruces Sun-News，2026-09-17", "https://www.lcsun-news.com/story/news/politics/elections/2026/09/17/new-mexico-gubernatorial-candidate-deb-haaland-lays-out-data-center-policy/91809743007/"], ["The Paper／ABQ News，2026-09-17", "https://abq.news/2026/09/haaland-data-centers/"]] }
+        ],
+        caveat: "<b>言行对照：</b>该暂停<b>不适用于</b>已在建的 Oracle 与 OpenAI 合作的 Project Jupiter（1650 亿美元，位于 Doña Ana County，已开工约 26%）；其竞选还接受了 Oracle 及其高管逾 10 万美元捐款（Oracle America 12,400 美元、Oracle 云基础设施 CEO Clay Magouyrk 12,400 美元等），引发争议。（HoyMX 转载 Mother Jones）"
+      },
+      {
+        id: "p-pingree", chamber: "gov", name: "Hannah Pingree", cn: "", role: "州长 · 缅因州（民主党守住）",
+        stance: "pause", level: "仅一句可查", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "仅检索到一句立场：她<b>支持此前被现任州长 Janet Mills 否决的大型数据中心建设暂停令</b>。未找到她关于具名公司、AI 监管、反垄断或隐私的公开表态。",
+            s: [["George Magazine，2026-11", "https://georgemagazine.com/voters-across-america-are-wary-of-data-centers/"]] }
+        ]
+      },
+      {
+        id: "p-crowley", chamber: "gov", name: "David Crowley", cn: "", role: "州长 · 威斯康星州（民主党守住）",
+        stance: "pause", level: "较具体", themes: ["dc", "kids", "ai"], wide: true,
+        stmts: [
+          { w: "camp", t: "2026 年 10 月 14—16 日立场转变：先前不主张废除税收优惠，后改称若法案送达州长办公桌将<b>签署废除数据中心税收优惠的法案</b>；并宣布 <b>11 点 AI 与社交媒体监管计划</b>：儿童与新创建账户默认隐私保护、限制成瘾性功能与夜间／上课时间通知、禁止监控广告、允许家长就伤害儿童的设计选择起诉平台、限制 13 岁以下儿童使用聊天机器人、禁止聊天机器人冒充医生或治疗师、要求对旨在建立情感联系的聊天机器人作出披露。",
+            s: [["Focal News，2026-10-16", "https://focalnews.org/madison-wi/politics/crowley-backs-ending-wisconsins-data-center-tax-breaks-sets-out-tech-oversight-plan"]] },
+          { w: "camp", t: "2026 年 10 月 20 日又支持在环境审查期间<b>暂停数据中心建设</b>（审查截止 2028 年 1 月 31 日，最长可达一年）；另主张将「超大规模」AI 数据中心单列电价类别、收取输电升级费、设立由数据中心用电费资助的公共福利基金。",
+            q: "As soon as we get in office, the first thing that we're going to focus on is data center regulation.",
+            qt: "我们一上任，首先要抓的就是数据中心监管。",
+            s: [["The Daily Reporter，2026-10-21", "https://dailyreporter.com/2026/10/21/david-crowley-backs-data-center-construction-moratorium-wisconsin/"], ["Milwaukee Journal Sentinel，2026-10-14", "https://www.jsonline.com/story/news/politics/2026/10/14/crowley-says-renewables-new-data-center-rules-can-lower-energy-costs/92220084007/"]] },
+          { w: "camp", t: "2026 年 10 月初接受 Milwaukee Journal Sentinel 编辑部采访：被问及若 <b>Microsoft</b> 总裁 Brad Smith 来电、要求在 Racine County 再建数十亿美元数据中心时怎么办，Crowley 回答：须先由立法机关通过护栏、保护社区／环境／农田／私产／水道、让社区有发言权、社区不要就不得强迫建设、不得将成本转嫁给缴费者，并要求数据中心尽可能接近 100% 使用可再生能源。",
+            s: [["Milwaukee Journal Sentinel，2026-10-31", "https://www.jsonline.com/story/opinion/columnists/2026/10/31/wisconsin-voters-election-ballot-governor/92522751007/"]] }
+        ]
+      }
+      );
+
+      /* ================= 众议员 ================= */
+      PEOPLE.push(
+      {
+        id: "p-pulido", chamber: "house", name: "Bobby Pulido", cn: "", role: "众议员 · 得克萨斯州 TX-15（翻盘）",
+        stance: "na", level: "仅一句可查", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "2026 年夏季对 USA Today 说，数据中心的就业增长论被夸大了。未找到他关于具名公司、暂停令、反垄断或 AI 监管的表态。",
+            q: "Those data centers don't provide a lot of jobs other than building them… But that's it. That's a one-shot, one-time deal.",
+            qt: "这些数据中心除了建设阶段之外，提供不了多少工作……仅此而已，是一次性的买卖。",
+            s: [["USA Today，2026-08-31", "https://www.usatoday.com/story/news/politics/2026/08/31/data-centers-moratoriums-dividing-democrats-midterms/91479282007/"]] }
+        ]
+      },
+      {
+        id: "p-harvie", chamber: "house", name: "Bob Harvie", cn: "", role: "众议员 · 宾夕法尼亚州（翻盘）",
+        stance: "pause", level: "较具体", themes: ["dc", "contrast"],
+        stmts: [
+          { w: "camp", t: "2026 年 9 月发布竞选广告，呼吁<b>暂停新建数据中心</b>，并批评对手 Brian Fitzpatrick「在大科技的口袋里」；其竞选网站亦将「暂停 Bucks County 新建数据中心开发」列为优先事项。",
+            q: "Big Tech is taking over our lives, and they want more… I don't want any more data centers. I want a moratorium. Big Tech owns enough. They shouldn't own our congressmen, too.",
+            qt: "大科技正在接管我们的生活，而且想要更多……我不要再多的数据中心了，我要暂停令。大科技拥有的已经够多了，不该再拥有我们的国会议员。",
+            s: [["Bucks County Courier Times／PhillyBurbs 事实核查，2026-10-16", "https://www.phillyburbs.com/story/news/politics/elections/2026/10/16/harvie-fitzpatrick-congress-district-bucks-montgomery-county-race-campaign-ads-fact-check/92246428007/"], ["Instagram 广告转载，2026-10-12", "https://www.instagram.com/reel/DeYIUAVyS5v/"]] }
+        ],
+        caveat: "<b>言行对照：</b>Harvie 此前曾支持在 Falls Township 建设 <b>Amazon</b> 超大规模数据中心（项目接近完工），2026 年竞选期间立场转向更严格管制。（同上事实核查）"
+      },
+      {
+        id: "p-jdford", chamber: "house", name: "J.D. Ford", cn: "", role: "众议员 · 印第安纳州（翻盘，原州参议员）",
+        stance: "na", level: "较具体 · 有立法纪录", themes: ["dc"],
+        stmts: [
+          { w: "rec", t: "任印第安纳州参议员期间连续两年提出数据中心监管法案：SB 135（2025）与 SB 79（2026），要求建设许可前披露预计用电与用水量、进行选址评估、要求运营商按季度报告用电量并公开。",
+            s: [["Citizens Action Coalition，2026-02-25 更新", "https://www.citact.org/news/2026-ai-data-center-bill-watch-list"]] },
+          { w: "camp", t: "2026 年 10 月 29 日对 WFYI 把高电价直接归因于数据中心；9 月 10 日竞选声明批评对手 Victoria Spartz 接受大科技公司（如 Amazon）与 Duke Energy 的捐款，并称其应提出与他在州参议院相同的法案。",
+            q: "these data centers, they're eating up our electricity. There's no reason to look elsewhere, why we have high utility rates in our state. …putting communities in control of whether and when data centers are built, and ensuring no costs are passed on to ratepayers.",
+            qt: "这些数据中心正在吞噬我们的电力。本州电价为什么高，不用去别处找原因。……让社区决定是否、何时建设数据中心，并确保不向缴费者转嫁任何成本。",
+            s: [["IPM／WFYI，2026-10-29", "https://www.ipm.org/news/2026-10-29/heres-where-indiana-candidates-stand-on-data-centers-before-election-day"], ["竞选声明，2026-09-10", "https://www.electjdford.com/post/after-spartz-helped-make-indiana-one-of-the-most-data-center-friendly-states-in-the-country-state-s"]] }
+        ]
+      },
+      {
+        id: "p-taylor", chamber: "house", name: "Shannon Taylor", cn: "", role: "众议员 · 弗吉尼亚州 VA-01（翻盘）",
+        stance: "na", level: "较具体", themes: ["dc", "anti"],
+        stmts: [
+          { w: "camp", t: "<b>全场众议员中唯一明确主张拆分垄断的人</b>：提议拆分集中的企业权力，致力于支持拆分科技、制药与银行业非法垄断的立法。",
+            q: "break up illegal monopolies",
+            qt: "拆分（科技、制药与银行等行业的）非法垄断。",
+            s: [["Wittman Watch，2026", "https://www.wittmanwatch.com/p/top-15-reasons-to-vote-for-shannon"]] },
+          { w: "camp", t: "数据中心立场：由地方决定是否建设，企业而非纳税人支付其消耗的电力与水费；支持立法要求新建数据中心不得推高家庭能源成本；若数据中心推高成本、污染水源或未使用本地工会劳工，则「不受欢迎」。",
+            q: "are not welcome",
+            qt: "（那样的项目）不受欢迎。",
+            s: [["Wittman Watch，2026", "https://www.wittmanwatch.com/p/top-15-reasons-to-vote-for-shannon"], ["Warren County Va，2026-10-27", "https://warrencountyva.com/2026/10/27/wittman-taylor-differ-on-costs-in-virginia-house-race/"]] }
+        ]
+      },
+      {
+        id: "p-luria", chamber: "house", name: "Elaine Luria", cn: "", role: "众议员 · 弗吉尼亚州 VA-02（翻盘，夺回原席位）",
+        stance: "na", level: "中等具体", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "在《Virginian-Pilot》问卷答复中称：任何新建数据中心必须获得地方社区支持（无例外）、不得使其他缴费者的电费上涨「一分钱」、必须使用闭环水系统；同时承认美国在与中国进行技术竞争方面存在国家安全利益。佐证：2026 年 10 月 14 日民调显示，VA-02 选民在「数据中心」议题上更信任 Luria 而非对手 Kiggans，差距 10 个百分点。未找到她关于具名公司、反垄断或 AI 监管的表态。",
+            s: [["《Virginian-Pilot》问卷（Facebook 转载截图），2026-10-29", "https://www.facebook.com/jennifer.ihnat/posts/pfbid032s6zacDcTcdwVoZ9iVMTRe1NdGrnc8A5RiK5qvpfXswYzVhWE9PU6gfbp2VgnD83l"], ["Virginia Scope 民调，2026-10-14", "https://www.virginiascope.com/wp-content/uploads/2026/10/10-14-Survey-Release.pdf"]] }
+        ],
+        caveat: "<b>证据强度较弱：</b>问卷答复的唯一来源是 Facebook 上转载的报纸问卷截图，未能打开原始报纸页面核实。"
+      },
+      {
+        id: "p-bohannan", chamber: "house", name: "Christina Bohannan", cn: "", role: "众议员 · 艾奥瓦州 IA-01（翻盘）",
+        stance: "na", level: "中等具体", themes: ["dc", "contrast"],
+        stmts: [
+          { w: "camp", t: "2026 年 10 月在 Maquoketa 造势时称，任何数据中心都不应违背地方意愿进入社区；决定权在社区。其竞选纲领还包括打击公用事业垄断。",
+            q: "No data center should be allowed to come into our local communities. Take our water, take our electricity, drive up electricity costs against local opposition. …It's their decision.",
+            qt: "任何数据中心都不应被允许进入我们的地方社区，违背地方反对意见夺走我们的水、电并推高电价。……决定权在他们（社区）手里。",
+            s: [["Iowa Starting Line，2026-10-09", "https://iowastartingline.com/news/politics/data-centers-energy-bohannan/"]] },
+          { w: "camp", t: "对 Iowa Independent 的电子邮件声明，措辞更完整。",
+            q: "I believe no data center should be built in Iowa that uses up our water or electric grid — or that drives up our costs in any way — without our consent.",
+            qt: "我认为，未经我们同意，任何耗尽我们的水资源或电网、或以任何方式推高我们成本的数据中心，都不应在艾奥瓦建设。",
+            s: [["Iowa Independent", "https://iowaindependentnews.com/elections/miller-meeks-bohannan-house-representatives-data-centers/"]] }
+        ],
+        caveat: "<b>未核实的攻击说法：</b>一则党派攻击帖（Iowa GOP 的 Facebook 帖文，2026-08-03）称她任州议员期间投票反对一项消费者数据隐私法案、同时持有至多 28 万美元 Apple／Alphabet／Meta 股票。该说法<b>未获独立核实</b>，不作为其本人表态计入。"
+      },
+      {
+        id: "p-james", chamber: "house", name: "Lindsay James", cn: "", role: "众议员 · 艾奥瓦州 IA-02（翻盘）",
+        stance: "na", level: "中等具体", themes: ["dc", "kids"],
+        stmts: [
+          { w: "camp", t: "2026 年 10 月 1 日辩论：与对手均反对数据中心税收优惠；James 称应有问责与护栏，保护水等自然资源、防止能源成本转嫁给社区。10 月 19 日视频讲话大意：不应给赚取数万亿美元的大公司建设数据中心提供税收优惠，地方社区应有权决定是否接受。",
+            s: [["Iowa Starting Line，2026-10-22", "https://iowastartingline.com/news/politics/mitchell-james-iowa-2nd-debates/"], ["Instagram 视频转载，2026-10-19", "https://www.instagram.com/reel/DerpgHxprwy/"]] },
+          { w: "camp", t: "据 MoveOn 背书页，她主张对大科技公司与社交媒体平台实施严格监管，保护儿童心理健康，把数字安全控制权交还父母。",
+            q: "strict oversight of Big Tech companies and social media platforms to safeguard children's mental health and return digital safety controls to parents.",
+            qt: "对大科技公司和社交媒体平台实施严格监管，以保护儿童心理健康，并将数字安全控制权交还给父母。",
+            s: [["MoveOn 背书页", "https://front.moveon.org/endorsements/candidates/lindsay-james/"]] }
+        ]
+      },
+      {
+        id: "p-garriott", chamber: "house", name: "Sarah Trone Garriott", cn: "", role: "众议员 · 艾奥瓦州 IA-03（翻盘）",
+        stance: "na", level: "中等具体", themes: ["dc", "ai"],
+        stmts: [
+          { w: "camp", t: "2026 年 10 月 15 日 Greater Des Moines Partnership 论坛：主张联邦政府加强对 AI 开发与数据中心建设的监管，优先保障安全；数据中心企业须使用工会劳工、提供高薪工作、达到安全标准，并承担其设施的能源与用水成本，而非由纳税人与公用事业用户承担；社区应有发言权；受益于 AI 的企业应帮助再培训被技术取代的工人。",
+            s: [["Des Moines Register，2026-10-16", "https://www.desmoinesregister.com/story/news/politics/elections/2026/10/16/zach-nunn-sarah-trone-garriott-ai-regulation-iowa-3rd-district/92271579007/"]] }
+        ]
+      },
+      {
+        id: "p-mcguire", chamber: "house", name: "Mike McGuire", cn: "", role: "众议员 · 加利福尼亚州 CA-01（翻盘）",
+        stance: "none", level: "无可查表态", themes: [], noneCard: true,
+        stmts: [
+          { w: "rec", t: "经多轮检索（竞选报道、候选人简介、选民指南），<b>未找到 Mike McGuire 关于大科技公司、数据中心、AI 监管、隐私或反垄断的公开表态</b>。其竞选报道主要围绕医保、关税、野火与反对特朗普政策。其对手 James Gallagher 曾提及自己投票支持《Ratepayer Protection Act》（防止数据中心转嫁电费），但那不是 McGuire 的表态。本页不从党派归属推断其立场。" }
+        ]
+      },
+      {
+        id: "p-shah", chamber: "house", name: "Amish Shah", cn: "", role: "众议员 · 亚利桑那州 AZ-01（翻盘）",
+        stance: "pause", level: "中等具体", themes: ["dc", "contrast"],
+        stmts: [
+          { w: "camp", t: "主张<b>暂停在其选区（AZ-01）新建数据中心</b>，理由是水资源问题；称 AI 发展虽需要数据中心，但不应建在 AZ-01。2026 年 10 月 7—8 日辩论中说：选民明确表示不希望数据中心建在本地社区，若设施可建在别处就应建在别处。",
+            s: [["KFF Health News，2026-10-29", "https://kffhealthnews.org/elections/data-centers-midterm-campaigns-health-pollution-noise-light-arizona-ohio/"], ["Instagram 辩论片段，2026-10-11／21", "https://www.instagram.com/reel/DeXfoNbSHZg/"]] }
+        ],
+        caveat: "<b>言行对照：</b>其任州议员期间（2021 年）曾投票支持延长数据中心税收优惠（HB 2649），2026 年竞选立场与此前投票纪录不一致，受到媒体与对手质疑。（Bisnow）"
+      },
+      {
+        id: "p-ojeda", chamber: "house", name: "Richard Ojeda", cn: "", role: "众议员 · 北卡罗来纳州 NC-09（翻盘）",
+        stance: "na", level: "一两句", themes: ["dc"],
+        stmts: [
+          { w: "camp", t: "在 Fayetteville Observer 问卷答复中谈税收优惠；在 Vote411 选民指南答复中称，对不受约束的数据中心开发深感担忧，因其虹吸地方水资源、针对最无力反抗的社区，主张将人置于企业利润之前。未找到他关于具名公司、反垄断或 AI 监管的表态。",
+            q: "stop handing tax breaks to industries like data centers while families struggle to pay the electric bill. …deeply concerned",
+            qt: "停止向数据中心等行业发放税收优惠，而家庭却在为支付电费挣扎。……（对不受约束的数据中心开发）深感担忧。",
+            s: [["MCMGS（引 Fayetteville Observer 问卷），2026-11-04", "https://www.mcmgs.com/blog/nc-election-2026-data-centers-power-bill"], ["Vote411 选民指南答复", "http://onyourballot.vote411.org/race-detail.do?id=20903793"]] }
+        ]
+      }
+      );
+
+      /* ================= 渲染 ================= */
+      var GROUPS = [
+        { key: "senate", title: "参议院", sub: "Senate · 翻盘 7 席 + 守住 1 席" },
+        { key: "gov", title: "州长", sub: "Governors · 翻盘 6 州 + 民主党守住 7 州" },
+        { key: "house", title: "众议院", sub: "House · 翻盘选区新科议员" }
+      ];
+      var WHEN = { camp: ["竞选期间", "w-camp"], post: ["选后", "w-post"], rec: ["公职纪录／背景", "w-rec"] };
+
+      function esc(s) {
+        return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+      function cardHTML(p) {
+        var st = STANCE[p.stance];
+        var h = '<article class="card' + (p.wide ? " wide" : "") + (p.noneCard ? " none-card" : "") + '" id="' + p.id + '"'
+          + ' data-chamber="' + p.chamber + '" data-stance="' + p.stance + '" data-themes="' + p.themes.join(" ") + '"'
+          + ' data-search="' + esc((p.name + " " + p.role).toLowerCase()) + '">';
+        h += '<div class="card-head"><div><h3 class="pname">' + esc(p.name) + '</h3><div class="prole">' + esc(p.role) + '</div></div>'
+          + '<div class="badges"><span class="badge ' + st[1] + '">' + st[0] + '</span><span class="badge b-level">' + esc(p.level) + '</span></div></div>';
+        if (p.themes.length) {
+          h += '<div class="themes">' + p.themes.map(function (t) { return '<span class="theme">' + THEMES[t] + '</span>'; }).join("") + '</div>';
+        }
+        h += '<ul class="stmts">';
+        p.stmts.forEach(function (s) {
+          var wn = WHEN[s.w];
+          h += '<li><span class="when ' + wn[1] + '">' + wn[0] + '</span>' + s.t;
+          if (s.q) {
+            h += '<blockquote>“' + esc(s.q) + '”' + (s.qt ? '<span class="tr">' + esc(s.qt) + '</span>' : '') + '</blockquote>';
+          }
+          if (s.s) {
+            h += '<div class="src">来源：' + s.s.map(function (x) {
+              return '<a href="' + x[1] + '" target="_blank" rel="noopener noreferrer">' + esc(x[0]) + '</a>';
+            }).join("；") + '</div>';
+          }
+          h += '</li>';
+        });
+        h += '</ul>';
+        if (p.caveat) {
+          h += '<div class="caveat"><span class="clabel">对照 / 背景 · 非本人表态</span>' + p.caveat + '</div>';
+        }
+        h += '</article>';
+        return h;
+      }
+
+      var groupsEl = document.getElementById("groups");
+      GROUPS.forEach(function (g) {
+        var members = PEOPLE.filter(function (p) { return p.chamber === g.key; });
+        var sec = document.createElement("div");
+        sec.className = "group";
+        sec.setAttribute("data-group", g.key);
+        sec.innerHTML = '<div class="group-head"><h2>' + g.title + '</h2><span class="gcount">' + g.sub + ' · 共 ' + members.length + ' 人</span></div>'
+          + '<div class="cards">' + members.map(cardHTML).join("") + '</div>';
+        groupsEl.appendChild(sec);
+      });
+
+      /* 搜索索引：把正文文本并入 data-search，便于按公司名搜 */
+      PEOPLE.forEach(function (p) {
+        var el = document.getElementById(p.id);
+        if (el) el.setAttribute("data-search", (el.getAttribute("data-search") + " " + el.textContent).toLowerCase());
+      });
+
+      /* ================= 筛选 ================= */
+      var state = { chamber: "all", stance: "all", theme: "all", q: "" };
+      function bindRow(id, key) {
+        var row = document.getElementById(id);
+        row.addEventListener("click", function (e) {
+          var btn = e.target.closest("button.chip");
+          if (!btn) return;
+          row.querySelectorAll("button.chip").forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+          btn.setAttribute("aria-pressed", "true");
+          state[key] = btn.getAttribute("data-v");
+          apply();
+        });
+      }
+      bindRow("f-chamber", "chamber");
+      bindRow("f-stance", "stance");
+      bindRow("f-theme", "theme");
+      document.getElementById("f-q").addEventListener("input", function (e) {
+        state.q = e.target.value.trim().toLowerCase();
+        apply();
+      });
+
+      function apply() {
+        var shown = 0;
+        PEOPLE.forEach(function (p) {
+          var el = document.getElementById(p.id);
+          var ok = (state.chamber === "all" || p.chamber === state.chamber)
+            && (state.stance === "all" || p.stance === state.stance)
+            && (state.theme === "all" || p.themes.indexOf(state.theme) !== -1)
+            && (state.q === "" || el.getAttribute("data-search").indexOf(state.q) !== -1);
+          el.style.display = ok ? "" : "none";
+          if (ok) shown++;
+        });
+        document.querySelectorAll(".group").forEach(function (g) {
+          var any = false;
+          g.querySelectorAll(".card").forEach(function (c) { if (c.style.display !== "none") any = true; });
+          g.style.display = any ? "" : "none";
+        });
+        document.getElementById("f-count").textContent = "显示 " + shown + " / " + PEOPLE.length + " 人";
+        document.getElementById("empty").className = shown === 0 ? "empty show" : "empty";
+      }
+      apply();
+    </script>
+  </body>
+</html>
